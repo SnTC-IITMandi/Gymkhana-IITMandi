@@ -52,6 +52,9 @@ export default function Home() {
 
           <div className="row">
             {/* TODO: render InfoCard with backend data */}
+            
+    
+            <div className="col-md-3 col-sm-6">
             <InfoCard
               info={{
                 name: "Surendra Singh",
@@ -61,7 +64,8 @@ export default function Home() {
                 email_id: "technical_secretary@students.iitmandi.ac.in",
               }}
             />
-          </div>
+            </div>
+            </div>
         </div>
       </section>
     </>
