@@ -5,7 +5,7 @@ import Navbar from './navbar.component';
 export default function Home() {
   return (
     <>
-    <Navbar activeClass="home"/>
+      <Navbar activeClass="home" />
       <section className="probootstrap-section probootstrap-section-colored">
         <div className="container">
           <div className="row">
@@ -52,15 +52,17 @@ export default function Home() {
 
           <div className="row">
             {/* TODO: render InfoCard with backend data */}
-            <InfoCard
-              info={{
-                name: "Surendra Singh",
-                image: "",
-                position: "Technical Secretary",
-                facebook_id: "https://www.facebook.com/surendrasingh24",
-                email_id: "technical_secretary@students.iitmandi.ac.in",
-              }}
-            />
+            <div className="col-md-3 col-sm-6">
+              <InfoCard
+                info={{
+                  name: "Surendra Singh",
+                  image: "",
+                  position: "Technical Secretary",
+                  facebook_id: "https://www.facebook.com/surendrasingh24",
+                  email_id: "technical_secretary@students.iitmandi.ac.in",
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>
