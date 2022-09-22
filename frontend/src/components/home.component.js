@@ -1,9 +1,11 @@
 import React from 'react'
 import InfoCard from './infoCard.component';
+import Navbar from './navbar.component';
 
 export default function Home() {
   return (
     <>
+    <Navbar activeClass="home"/>
       <section className="probootstrap-section probootstrap-section-colored">
         <div className="container">
           <div className="row">

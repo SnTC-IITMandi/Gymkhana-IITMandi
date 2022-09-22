@@ -1,6 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-export default function Navbar() {
+export default function Navbar(props) {
+    let isActive = {
+        home: "",
+        technical: "",
+        research: "",
+        cultural: "",
+        sports: "",
+        literary: "",
+        hostel: "",
+        senate: "",
+        more: "" 
+    };
+    isActive[props.activeClass] = "active";
+    
   return (
     <nav className="navbar navbar-default probootstrap-navbar">
       <div className="container">
@@ -25,31 +38,31 @@ export default function Navbar() {
 
         <div id="navbar-collapse" className="navbar-collapse collapse">
           <ul className="nav navbar-nav navbar-right">
-            <li className="active">
+            <li className={isActive.home}>
               <a href="index.html">Home</a>
             </li>
-            <li>
+            <li className={isActive.technical}>
               <a href="technical.html">Technical</a>
             </li>
-            <li>
+            <li className={isActive.research}>
               <a href="research.html">Research</a>
             </li>
-            <li>
+            <li className={isActive.cultural}>
               <a href="cultural.html">Cultural</a>
             </li>
-            <li>
+            <li className={isActive.sports}>
               <a href="sports.html">Sports</a>
             </li>
-            <li>
+            <li className={isActive.literary}>
               <a href="literary.html">Literary</a>
             </li>
-            <li>
+            <li className={isActive.hostel}>
               <a href="hostel.html">Hostel</a>
             </li>
-            <li>
+            <li className={isActive.senate}>
               <a href="senate.html">Senate</a>
             </li>
-            <li className="dropdown2">
+            <li className={`dropdown2 ${isActive.more}`}>
               <a href="/#">More</a>
               <div className="dropdown-content">
                 <a href="wall_of_fame.html">Wall of Fame</a>
