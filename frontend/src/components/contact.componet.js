@@ -1,9 +1,8 @@
 import React from 'react';
 // import styles from './contact.css';
-import InfoCard from './infoCard.component';
 import Navbar from './navbar.component';
 
-export default function Sports() {
+export default function Contact() {
   return (
     <>
       <Navbar activeClass="more" />
