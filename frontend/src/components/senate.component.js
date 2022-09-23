@@ -79,10 +79,12 @@ export default function Senate() {
                   </p>
                   <table className="table">
                     <thead>
-                      <th>Name</th>
-                      <th>Roll Number</th>
-                      <th>Branch</th>
-                      <th>Phone Number</th>
+                      <tr>
+                        <th>Name</th>
+                        <th>Roll Number</th>
+                        <th>Branch</th>
+                        <th>Phone Number</th>
+                      </tr>
                     </thead>
                     <tbody>
                       {/* <!-- Seniors to Juniors --> */}

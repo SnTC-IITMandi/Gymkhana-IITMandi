@@ -5,7 +5,7 @@ import Navbar from './navbar.component';
 export default function Sports() {
   return (
     <>
-      <Navbar activeClassName="wall_of_fame" />
+      <Navbar activeClass="more" />
       <section class="probootstrap-section probootstrap-section-colored">
 			<div class="container">
 				<div class="row">

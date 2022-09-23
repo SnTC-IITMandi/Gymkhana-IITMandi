@@ -5,7 +5,7 @@ import Navbar from './navbar.component';
 export default function Sports() {
   return (
     <>
-      <Navbar activeClassName="sports" />
+      <Navbar activeClass="sports" />
       
       <section className="probootstrap-section probootstrap-section-colored">
         <div className="container">

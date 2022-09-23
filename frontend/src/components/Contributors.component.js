@@ -5,7 +5,7 @@ import Navbar from './navbar.component';
 export default function Sports() {
   return (
     <>
-      <Navbar activeClassName="contributors" />
+      <Navbar activeClass="more" />
       <section class="probootstrap-section probootstrap-section-colored">
       <div class="container">
         <div class="row">
@@ -15,25 +15,14 @@ export default function Sports() {
         </div>
       </div>
     </section>
-   <section>
-   <ul className="probootstrap-side-menu">
-                      <li>
-                        {/* <!-- Tech --> */}
-                        {/* update with backend */}
-                        <InfoCard
-                          info={{
-                            name: "Shidarth pandi",
-                            image: "",
-                            position: "Sports Secretary",
-                            facebook_id:
-                            "https://www.facebook.com/siddhu8101",
-                            email_id:
-                              "sports_secretary@students.iitmandi.ac.in",
-                          }}
-                        />
-                      </li>
-                    </ul>
-   </section>
+    <section class="probootstrap-section probootstrap-section-sm">
+      <div class="container">
+
+        {/* <!-- Contributors list --> */}
+        <div class="row" id="contributors-container"></div>
+
+      </div>
+    </section>
     <section class="probootstrap-section">
      <div class=" text-center">
        <h2>Willing to contribute?</h2>

@@ -56,6 +56,7 @@ export default function Cultural() {
                   <p>
                     The cultural society basically, consists of the following
                     cultural clubs
+                  </p>
                     <ul>
                       <li>Music Club</li>
                       <li>Dance Club</li>
@@ -74,7 +75,7 @@ export default function Cultural() {
                     all the clubs support open participation i.e. all the
                     students are free to join a club at any point of time. Of
                     course, dedicated students are rewarded accordingly.
-                  </p>
+                    <p></p>
                 </div>
               </div>
             </div>
