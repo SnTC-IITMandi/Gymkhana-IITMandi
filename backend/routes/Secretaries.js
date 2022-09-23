@@ -1,5 +1,5 @@
 const router = require('express').Router();
-mkd
+
 router.route('/').get((req, res) => {
   Secretaries.find()
     .then(sec => res.json(sec))
@@ -49,4 +49,4 @@ router.route('/senate').get((req, res) => {
 });
 
 
-module.exports = router;cd 
+module.exports = router;
