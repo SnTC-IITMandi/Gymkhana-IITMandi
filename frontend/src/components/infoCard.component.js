@@ -5,7 +5,6 @@ export default function InfoCard(props) {
     // info = {name, position, facebook_id, email_id, image, phone_number}
 
   return (
-    <div className="col-md-3 col-sm-6">
       <div className="probootstrap-teacher text-center probootstrap-animate  fadeInUp probootstrap-animated">
         <figure className="media">
           <img src={info.image} alt="" className="img-responsive" />
@@ -27,6 +26,5 @@ export default function InfoCard(props) {
           </ul>
         </div>
       </div>
-    </div>
   );
 }
