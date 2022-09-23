@@ -1,45 +1,28 @@
-const express = require("express");
-const port = process.env.PORT||8000;
-const bodyParser = require("body-parser");
-const session = require("express-session");
-const useragent = require('express-useragent');
-const mainRoutes = require("./routes/mainRoutes");
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
 
-// ------------- ENV FILE, DATABASE CONNECTION -----------
-require("dotenv").config({ path: "./config/config.env" });
+const dotenv = require("dotenv");
+dotenv.config();
 
-// ------- EXPRESS, BODYPARSER, EJS VIEW ENGINE SETUP --------
 const app = express();
-app.use(useragent.express());
-app.use(bodyParser.json());
-app.use(
-    bodyParser.urlencoded({
-        extended: true,
-    })
-);
-app.use(function (req, res, next) {
-    if (!req.user) {
-        res.header(
-            "Cache-Control",
-            "private, no-cache, no-store, must-revalidate"
-        );
-        res.header("Expires", "-1");
-        res.header("Pragma", "no-cache");
-    }
-    next();
-});
+const port = process.env.PORT || 5000;
 
-// ----------- EXPRESS SESSION SETUP ------------
-app.use(
-    session({
-        secret: process.env.SECRET,
-        resave: false,
-        saveUninitialized: false,
-    })
-);
+app.use(cors());
+app.use(express.json());
 
-// --------------------  ROUTES SETUP -----------------------
-app.use("/", mainRoutes);
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri);
+
+const connection = mongoose.connection;
+connection.once('open', () => {
+  console.log("MongoDB database connection established successfully");
+})
+
+const SecRouter = require('./routes/Secretaries');
+
+app.use('/Secretaries', SecRouter);
+
 app.get("*", function (req, res) {
 	res.status(404).send("<h1>404 NOT FOUND!</h1>");
 });
