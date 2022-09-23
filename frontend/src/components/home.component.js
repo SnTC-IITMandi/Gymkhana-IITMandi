@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import InfoCard from './infoCard.component';
 import Navbar from './navbar.component';
 
@@ -55,11 +55,11 @@ export default function Home() {
             <div className="col-md-3 col-sm-6">
               <InfoCard
                 info={{
-                  name: "Surendra Singh",
-                  image: "",
-                  position: "Technical Secretary",
-                  facebook_id: "https://www.facebook.com/surendrasingh24",
-                  email_id: "technical_secretary@students.iitmandi.ac.in",
+                  name: 'Surendra Singh',
+                  image: '',
+                  position: 'Technical Secretary',
+                  facebook_id: 'https://www.facebook.com/surendrasingh24',
+                  email_id: 'technical_secretary@students.iitmandi.ac.in',
                 }}
               />
             </div>
