@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Navbar(props) {
     let isActive = {
@@ -31,47 +32,47 @@ export default function Navbar(props) {
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <a className="navbar-brand" href="index.html" title="Gymkhana">
+          <Link className="navbar-brand" to="/index.html" title="Gymkhana">
             StudentGymkhana-IITMandi
-          </a>
+          </Link>
         </div>
 
         <div id="navbar-collapse" className="navbar-collapse collapse">
           <ul className="nav navbar-nav navbar-right">
             <li className={isActive.home}>
-              <a href="index.html">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li className={isActive.technical}>
-              <a href="technical.html">Technical</a>
+              <Link to="/technical">Technical</Link>
             </li>
             <li className={isActive.research}>
-              <a href="research.html">Research</a>
+              <Link to="/research">Research</Link>
             </li>
             <li className={isActive.cultural}>
-              <a href="cultural.html">Cultural</a>
+              <Link to="/cultural">Cultural</Link>
             </li>
             <li className={isActive.sports}>
-              <a href="sports.html">Sports</a>
+              <Link to="/sports">Sports</Link>
             </li>
             <li className={isActive.literary}>
-              <a href="literary.html">Literary</a>
+              <Link to="/literary">Literary</Link>
             </li>
             <li className={isActive.hostel}>
-              <a href="hostel.html">Hostel</a>
+              <Link to="/hostel">Hostel</Link>
             </li>
             <li className={isActive.senate}>
-              <a href="senate.html">Senate</a>
+              <Link to="/senate">Senate</Link>
             </li>
             <li className={`dropdown2 ${isActive.more}`}>
-              <a href="/#">More</a>
+              <Link to="//#">More</Link>
               <div className="dropdown-content">
-                <a href="wall_of_fame.html">Wall of Fame</a>
+                <Link to="/wall_of_fame">Wall of Fame</Link>
                 ---
-                <a href="contributors.html">Contributors</a>
+                <Link to="/contributors">Contributors</Link>
                 ---
-                <a href="contacts.html">Contacts</a>
+                <Link to="/contacts">Contacts</Link>
                 ---
-                <a href="news.html">News</a>
+                <Link to="/news">News</Link>
               </div>
             </li>
           </ul>
