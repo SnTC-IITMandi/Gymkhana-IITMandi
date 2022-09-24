@@ -1,11 +1,11 @@
 import React from 'react';
-import InfoCard from './infoCard.component';
+// import styles from './contact.css';
 import Navbar from './navbar.component';
 
-export default function Sports() {
+export default function Contact() {
   return (
     <>
-      <Navbar activeClassName="contacts" />
+      <Navbar activeClass="more" />
       <section class="probootstrap-section probootstrap-section-colored">
 			<div class="container">
 				<div class="row">

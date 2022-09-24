@@ -32,7 +32,7 @@ export default function Navbar(props) {
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <Link className="navbar-brand" to="/index.html" title="Gymkhana">
+          <Link className="navbar-brand" to="/" title="Gymkhana">
             StudentGymkhana-IITMandi
           </Link>
         </div>

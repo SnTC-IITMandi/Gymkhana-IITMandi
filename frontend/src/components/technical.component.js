@@ -74,6 +74,7 @@ export default function Technical() {
                     by faculty. The major events for SnTC are Inter IIT Tech
                     Meet, Avishkar and Utkarsh. SnTC constitutes of following
                     clubs:
+                  </p>
                     <ul>
                       <li>Robotronics Club</li>
                       <li>Space Technology and Astronomy Cell (STAC)</li>
@@ -89,7 +90,7 @@ export default function Technical() {
                     faculty advisor and a co-advisor. All the clubs are open for
                     all the students of IIT Mandi. However, a core team is
                     formed for efficient running of the club.
-                  </p>
+                    <p></p>
                 </div>
               </div>
             </div>

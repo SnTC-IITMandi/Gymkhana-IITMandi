@@ -5,12 +5,12 @@ import Navbar from './navbar.component';
 export default function Sports() {
   return (
     <>
-      <Navbar activeClassName="sports" />
+      <Navbar activeClass="sports" />
       
       <section className="probootstrap-section probootstrap-section-colored">
         <div className="container">
           <div className="row">
-            <div className="col-md-12 text-left section-heading probootstrap-animate fadeInUp probootstrap-animated fadeInUp probootstrap-animate fadeInUp probootstrap-animatedd fadeInUp probootstrap-animate fadeInUp probootstrap-animated fadeInUp probootstrap-animate fadeInUp probootstrap-animateddd">
+            <div className="col-md-12 text-left section-heading probootstrap-animate fadeInUp probootstrap-animated">
               <h2>Sports</h2>
             </div>
           </div>
