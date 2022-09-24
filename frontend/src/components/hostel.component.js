@@ -5,7 +5,7 @@ import Navbar from "./navbar.component";
 export default function Hostel() {
   return (
     <>
-    <Navbar activeClass="hostel"/>
+      <Navbar activeClass="hostel" />
       <section className="probootstrap-section probootstrap-section-colored">
         <div className="container">
           <div className="row">

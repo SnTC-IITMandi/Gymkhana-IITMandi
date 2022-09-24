@@ -3,15 +3,15 @@ import InfoCard from "./infoCard.component";
 import Navbar from "./navbar.component";
 
 export default function WallOfFame() {
-	const accordionClick = (e) =>{
-		e.preventDefault();
-		if(e.target.classList.contains('active')){
-			e.target.nextElementSibling.style.display = "none";
-		}else{
-			e.target.nextElementSibling.style.display = "block";
-		}
-		e.target.classList.toggle('active');
-	}
+  const accordionClick = (e) => {
+    e.preventDefault();
+    if (e.target.classList.contains('active')) {
+      e.target.nextElementSibling.style.display = "none";
+    } else {
+      e.target.nextElementSibling.style.display = "block";
+    }
+    e.target.classList.toggle('active');
+  }
 
   return (
     <>

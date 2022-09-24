@@ -39,14 +39,14 @@ const Git = function (props) {
 
 export default function Contributors() {
   const [contributors, setContributors] = useState([]);
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     axios.get(
       "https://api.github.com/repos/KamandPrompt/Gymkhana-IITMandi/contributors"
-    ).then(result=>{
+    ).then(result => {
       setContributors(result.data);
     });
-  },[])
+  }, [])
   return (
     <>
       <Navbar activeClass="more" />
@@ -63,8 +63,8 @@ export default function Contributors() {
         <div class="container">
           {/* <!-- Contributors list --> */}
           <div class="row" id="contributors-container">
-            {contributors.map(user=>{
-              return <Git key={user.id} user={user}/>
+            {contributors.map(user => {
+              return <Git key={user.id} user={user} />
             })}
             {/* add list of contributors fetched from github */}
           </div>

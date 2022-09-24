@@ -75,22 +75,22 @@ export default function Technical() {
                     Meet, Avishkar and Utkarsh. SnTC constitutes of following
                     clubs:
                   </p>
-                    <ul>
-                      <li>Robotronics Club</li>
-                      <li>Space Technology and Astronomy Cell (STAC)</li>
-                      <li>Yantrik Club</li>
-                      <li>KamandPrompt - Programming Club</li>
-                      <li>Nirmaan Club</li>
-                      <li>SAE Collegiate</li>
-                      <li>Entrepreneurship Cell</li>
-                      <li>Kamand BioEngineering Group</li>
-                    </ul>
-                    Each club is coordinated by two coordinators and comprises
-                    of students of similar interest. Each club is advised by a
-                    faculty advisor and a co-advisor. All the clubs are open for
-                    all the students of IIT Mandi. However, a core team is
-                    formed for efficient running of the club.
-                    <p></p>
+                  <ul>
+                    <li>Robotronics Club</li>
+                    <li>Space Technology and Astronomy Cell (STAC)</li>
+                    <li>Yantrik Club</li>
+                    <li>KamandPrompt - Programming Club</li>
+                    <li>Nirmaan Club</li>
+                    <li>SAE Collegiate</li>
+                    <li>Entrepreneurship Cell</li>
+                    <li>Kamand BioEngineering Group</li>
+                  </ul>
+                  Each club is coordinated by two coordinators and comprises
+                  of students of similar interest. Each club is advised by a
+                  faculty advisor and a co-advisor. All the clubs are open for
+                  all the students of IIT Mandi. However, a core team is
+                  formed for efficient running of the club.
+                  <p></p>
                 </div>
               </div>
             </div>

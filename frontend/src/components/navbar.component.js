@@ -2,19 +2,19 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 export default function Navbar(props) {
-    let isActive = {
-        home: "",
-        technical: "",
-        research: "",
-        cultural: "",
-        sports: "",
-        literary: "",
-        hostel: "",
-        senate: "",
-        more: "" 
-    };
-    isActive[props.activeClass] = "active";
-    
+  let isActive = {
+    home: "",
+    technical: "",
+    research: "",
+    cultural: "",
+    sports: "",
+    literary: "",
+    hostel: "",
+    senate: "",
+    more: ""
+  };
+  isActive[props.activeClass] = "active";
+
   return (
     <nav className="navbar navbar-default probootstrap-navbar">
       <div className="container">

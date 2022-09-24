@@ -57,25 +57,25 @@ export default function Cultural() {
                     The cultural society basically, consists of the following
                     cultural clubs
                   </p>
-                    <ul>
-                      <li>Music Club</li>
-                      <li>Dance Club</li>
-                      <li>Dramatics Club</li>
-                      <li>Art Geeks</li>
-                      <li>Photography Club - Shutterbugs</li>
-                      <li>Movie Making Club - Perception</li>
-                      <li>Designauts</li>
-                    </ul>
-                    While the Program Management forms the backbone of the
-                    cultural society, managing all sorts of odds and backstage
-                    activities the other clubs typically represents various
-                    forms of fine arts and are responsible for the overall
-                    development of the institute and individuals as well. One
-                    unique feature of the Institute's Cultural Society is that
-                    all the clubs support open participation i.e. all the
-                    students are free to join a club at any point of time. Of
-                    course, dedicated students are rewarded accordingly.
-                    <p></p>
+                  <ul>
+                    <li>Music Club</li>
+                    <li>Dance Club</li>
+                    <li>Dramatics Club</li>
+                    <li>Art Geeks</li>
+                    <li>Photography Club - Shutterbugs</li>
+                    <li>Movie Making Club - Perception</li>
+                    <li>Designauts</li>
+                  </ul>
+                  While the Program Management forms the backbone of the
+                  cultural society, managing all sorts of odds and backstage
+                  activities the other clubs typically represents various
+                  forms of fine arts and are responsible for the overall
+                  development of the institute and individuals as well. One
+                  unique feature of the Institute's Cultural Society is that
+                  all the clubs support open participation i.e. all the
+                  students are free to join a club at any point of time. Of
+                  course, dedicated students are rewarded accordingly.
+                  <p></p>
                 </div>
               </div>
             </div>
