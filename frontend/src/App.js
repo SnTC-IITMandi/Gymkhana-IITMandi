@@ -9,7 +9,7 @@ import Technical from './components/technical.component.js';
 import Literary from './components/literary.component.js';
 import Research from './components/research.component.js';
 import Sports from './components/sports.component.js';
-import Contact from "./components/contact.componet.js";
+import Contact from "./components/contact.component.js";
 import WallOfFame from"./components/wall_of_fame.component.js";
 import Contributors from "./components/contributors.component.js";
 import News from "./components/news.component";
