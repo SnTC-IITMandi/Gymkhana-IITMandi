@@ -3,36 +3,37 @@
 @import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
 
 *,
-*:before,
-*:after {
+.contactgym *:before,
+.contactgym *:after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,
+/* html,
 body {
     height: 100%;
-}
+} */
 
-body {
+.contactgym {
     font: 14px/1 'Open Sans', sans-serif;
     color: #555;
     background: #eee;
 }
 
-h1 {
+.contactgym h1 {
+    /* font: 14px/1 'Open Sans', sans-serif; */
     padding: 50px 0;
     font-weight: 400;
     text-align: center;
 }
 
-p {
+.contactgym p {
     margin: 0 0 20px;
     line-height: 1.5;
 }
 
-main {
+.contactgym main {
     min-width: 320px;
     max-width: 1150px;
     padding: 50px;
@@ -41,53 +42,53 @@ main {
     text-align: center;
 }
 
-#content1 {
+.contactgym #content1 {
     display: none;
     padding: 20px 0 0;
     border-top: 1px solid #ddd;
     text-align: left;
 }
 
-#content2 {
+.contactgym #content2 {
     display: none;
     padding: 20px 0 0;
     border-top: 1px solid #ddd;
     text-align: left;
 }
 
-#content3 {
+.contactgym #content3 {
     display: none;
     padding: 20px 0 0;
     border-top: 1px solid #ddd;
     text-align: left;
 }
 
-#content4 {
+.contactgym #content4 {
     display: none;
     padding: 20px 0 0;
     border-top: 1px solid #ddd;
     text-align: left;
 }
 
-#content5 {
+.contactgym #content5 {
     display: none;
     padding: 20px 0 0;
     border-top: 1px solid #ddd;
     text-align: left;
 }
 
-#content6 {
+.contactgym #content6 {
     display: none;
     padding: 20px 0 0;
     border-top: 1px solid #ddd;
     text-align: left;
 }
 
-input {
+.contactgym input {
     display: none;
 }
 
-label {
+.contactgym label {
     display: inline-block;
     margin: 0 0 -1px;
     padding: 15px 25px;
@@ -95,48 +96,106 @@ label {
     text-align: center;
     color: #bbb;
     border: 1px solid transparent;
+    border-bottom: 1px solid #bbb;
 }
 
-label:before {
+.contactgym label:before {
     font-family: fontawesome;
     font-weight: normal;
     margin-right: 10px;
 }
 
-label:hover {
+.contactgym label:hover {
     color: #888;
     cursor: pointer;
 }
 
-input:checked+label {
+.contactgym input:checked+label {
     color: #555;
     border: 1px solid #ddd;
     border-top: 2px solid orange;
     border-bottom: 1px solid #fff;
 }
 
-#tab1:checked~#content1,
-#tab2:checked~#content2,
-#tab3:checked~#content3,
-#tab4:checked~#content4,
-#tab5:checked~#content5,
-#tab6:checked~#content6 {
-    display: block;
-}
 
 @media screen and (max-width: 650px) {
-    label {
+    .contactgym label {
         font-size: 0;
     }
 
-    label:before {
+    .contactgym label:before {
         margin: 0;
         font-size: 18px;
     }
 }
 
 @media screen and (max-width: 400px) {
-    label {
+    .contactgym label {
         padding: 15px;
     }
+}
+
+.contactgym .tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.contactgym .tg td {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 10px 5px;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    word-break: normal;
+}
+
+.contactgym .tg th {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 10px 5px;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    word-break: normal;
+}
+
+.contactgym .tg .tg-prof {
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "Times New Roman", Times, serif !important;
+    ;
+    text-align: center
+}
+
+.contactgym .tg .tg-jye2 {
+    font-size: 13px;
+    font-family: Georgia, serif !important;
+    ;
+    text-align: center
+}
+
+.contactgym .tg .tg-8x98 {
+    font-size: 13px;
+    font-family: Georgia, serif !important;
+}
+
+.contactgym .tg .tg-49q9 {
+    font-size: 13px;
+    font-family: Georgia, serif !important;
+    ;
+    text-align: center;
+    vertical-align: top
+}
+
+.contactgym .tg .tg-cver {
+    font-size: 13px;
+    font-family: Georgia, serif !important;
+    ;
+    vertical-align: top
+}
+
+.contactgym .tg .tg-yw4l {
+    vertical-align: top
 }
