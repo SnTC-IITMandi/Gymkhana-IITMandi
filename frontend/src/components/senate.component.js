@@ -1,8 +1,25 @@
 import React from "react";
 import InfoCard from "./infoCard.component";
 import Navbar from "./navbar.component";
-
+import { useState, useEffect } from "react";
 export default function Senate() {
+  const [sec, setsec] = useState(false);
+  useEffect(() => {
+    const fun = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKENDURL}/senate`
+        );
+        const data = await response.json();
+        console.log(data);
+        setsec(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fun();
+  }, []);
+
   return (
     <>
       <Navbar activeClass="senate" />
@@ -26,18 +43,17 @@ export default function Senate() {
                     <h3>Academic Secretary</h3>
                     <ul className="probootstrap-side-menu">
                       <li>
-                        {/* <!-- Add here Academic secretary --> */}
-                        <InfoCard
-                          info={{
-                            name: "Surendra Singh",
-                            image: "",
-                            position: "Technical Secretary",
-                            facebook_id:
-                              "https://www.facebook.com/surendrasingh24",
-                            email_id:
-                              "technical_secretary@students.iitmandi.ac.in",
-                          }}
-                        />
+                        {sec && (
+                          <InfoCard
+                            info={{
+                              name: `${sec.name}`,
+                              image: `${sec.image}`,
+                              position: `${sec.post}`,
+                              facebook_id: `${sec.facebook}`,
+                              email_id: `${sec.email}`,
+                            }}
+                          />
+                        )}
                       </li>
                     </ul>
                   </div>
