@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Navbar from "./navbar.component";
 
 export default function News() {
+  const [news, setNews] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_BACKENDURL}/news`)
+      .then((result) => 
+      {console.log(result.data)
+      setNews(result.data)})
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <>
       <Navbar activeClass="more" />
@@ -22,46 +32,19 @@ export default function News() {
               <div class="probootstrap-flex-block">
                 <div class="probootstrap-text probootstrap-animate fadeInUp probootstrap-animated">
                   <div class="newsitem">
-                    <div id="news-display">
+                    {news.map(element=>{
+                      return<div id="news-display" key={element._id}>
                       {/* add news here (h3, p, br, br) */}
                       <h3>
-                        Robotronics Club-IoT Weekend | <span>04/03/2019</span>
+                        {element.title } | <span>{new Date(element.date).toLocaleDateString()}</span>
                       </h3>
                       <p>
-                        This was a next level for the students after we had
-                        conducted the 3 session series on Introduction to
-                        Arduino and basics. Raspberry Pi, interfacing of it,
-                        Internet of Things and its applications were the prime
-                        topics we covered in this 3-day weekend workshop.
-                        <br /> There were 3 sessions, each being of 1.5 - 2
-                        hours, organized on 2nd, 3rd and 4th March, 2019 in
-                        A1-NKN, as we got an extra holiday on Monday (Maha
-                        Shivratri).
-                        <br />
-                        The three sessions were based respectively on
-                        <br />
-                        1. Raspberry Pi, its setup and interfacing with an LED
-                        and other various sensors.
-                        <br />
-                        2. NodeMCU - ESP8266 module, its basics.
-                        <br />
-                        3. NodeMCU and post basics and interfacing for basic IoT
-                        applications.
-                        <br />
-                        All the sessions were organized and managed by the
-                        students - 2nd year core members and club coordinator
-                        from 3rd year - Gaurav Kumar. Every session was planned
-                        a day before and executed properly then.
-                        <br />
-                        Components for the same were mostly issued from within
-                        the Institute and hence the cost for this workshop was
-                        minimal. Following components have been bought after the
-                        Workshop to provide them for various IoT based projects
-                        to the IIT Mandi students.
+                        {element.description}
                       </p>
                       <br />
                       <br />
                     </div>
+                    })}
                   </div>
                 </div>
               </div>
