@@ -14,6 +14,7 @@ export default function Senate() {
           `${process.env.REACT_APP_BACKENDURL}/senate_members`
         );
         const data = await response.json();
+        data.sort((a, b) => (a.rollno > b.rollno ? 1 : -1));
         setSenate(data);
       } catch (err) {
         console.log(err);
