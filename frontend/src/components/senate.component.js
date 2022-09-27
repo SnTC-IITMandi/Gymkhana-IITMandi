@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import InfoCard from "./infoCard.component";
 import Navbar from "./navbar.component";
-
+import { useState, useEffect } from "react";
 export default function Senate() {
+
   const [senate, setSenate] = useState([]);
   const [sec, setSec] = useState(false);
 
@@ -26,11 +27,13 @@ export default function Senate() {
           `${process.env.REACT_APP_BACKENDURL}/senate`
         );
         const data = await response.json();
+
         setSec(data);
       } catch (err) {
         console.log(err);
       }
     };
+
     fun1();
     fun2();
   }, []);
@@ -58,6 +61,7 @@ export default function Senate() {
                     <h3>Academic Secretary</h3>
                     <ul className="probootstrap-side-menu">
                       <li>
+
                         {/* <!-- Add here Academic secretary --> */}
                         {sec && (
                           <InfoCard

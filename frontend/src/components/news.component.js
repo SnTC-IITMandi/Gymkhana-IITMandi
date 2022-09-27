@@ -3,6 +3,7 @@ import Navbar from "./navbar.component";
 
 export default function News() {
   const [news, setNews] = useState([]);
+
   useEffect(() => {
     const fun = async () => {
       try {
@@ -14,6 +15,7 @@ export default function News() {
       } catch (err) {
         console.log(err);
       }
+
     };
     fun();
   }, []);
@@ -37,25 +39,18 @@ export default function News() {
               <div className="probootstrap-flex-block">
                 <div className="probootstrap-text probootstrap-animate fadeInUp probootstrap-animated">
                   <div className="newsitem">
-                    {news.map((element) => {
-                      return (
-                        <div id="news-display" key={element._id}>
-                          {/* add news here (h3, p, br, br) */}
-                          <h3>
-                            {element.title} |{" "}
-                            <span>
-                              {element.date}
-                            </span>
-                          </h3>
-                          <p
-                            dangerouslySetInnerHTML={{
-                              __html: element.description,
-                            }}
-                          ></p>
-                          <br />
-                          <br />
-                        </div>
-                      );
+                    {news.map((element)=>{
+                      return<div id="news-display" key={element._id}>
+                      <h3>
+                        {element.title } | <span>{new Date(element.date).toLocaleDateString()}</span>
+                      </h3>
+                      <p>
+                        {element.description}
+                      </p>
+                      <br />
+                      <br />
+                    </div>
+
                     })}
                   </div>
                 </div>

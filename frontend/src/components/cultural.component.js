@@ -1,8 +1,24 @@
-import React from 'react';
-import InfoCard from './infoCard.component';
-import Navbar from './navbar.component';
-
+import React from "react";
+import InfoCard from "./infoCard.component";
+import Navbar from "./navbar.component";
+import { useState, useEffect } from "react";
 export default function Cultural() {
+  const [sec, setsec] = useState(false);
+  useEffect(() => {
+    const fun = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKENDURL}/technical`
+        );
+        const data = await response.json();
+        console.log(data);
+        setsec(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fun();
+  }, []);
   return (
     <>
       <Navbar activeClass="cultural" />
@@ -26,18 +42,15 @@ export default function Cultural() {
                     <h3>Cultural Secretary</h3>
                     <ul className="probootstrap-side-menu">
                       <li>
-                        {/* <!-- Add cult secy here --> */}
-                        <InfoCard
+                        {sec&&<InfoCard
                           info={{
-                            name: 'Surendra Singh',
-                            image: '',
-                            position: 'Technical Secretary',
-                            facebook_id:
-                              'https://www.facebook.com/surendrasingh24',
-                            email_id:
-                              'technical_secretary@students.iitmandi.ac.in',
+                            name: `${sec.name}`,
+                            image: `${sec.image}`,
+                            position: `${sec.post}`,
+                            facebook_id: `${sec.facebook}`,
+                            email_id: `${sec.email}`,
                           }}
-                        />
+                        />}
                       </li>
                     </ul>
                   </div>
@@ -68,13 +81,13 @@ export default function Cultural() {
                   </ul>
                   While the Program Management forms the backbone of the
                   cultural society, managing all sorts of odds and backstage
-                  activities the other clubs typically represents various
-                  forms of fine arts and are responsible for the overall
-                  development of the institute and individuals as well. One
-                  unique feature of the Institute's Cultural Society is that
-                  all the clubs support open participation i.e. all the
-                  students are free to join a club at any point of time. Of
-                  course, dedicated students are rewarded accordingly.
+                  activities the other clubs typically represents various forms
+                  of fine arts and are responsible for the overall development
+                  of the institute and individuals as well. One unique feature
+                  of the Institute's Cultural Society is that all the clubs
+                  support open participation i.e. all the students are free to
+                  join a club at any point of time. Of course, dedicated
+                  students are rewarded accordingly.
                   <p></p>
                 </div>
               </div>

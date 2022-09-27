@@ -1,8 +1,25 @@
-import React from 'react'
-import InfoCard from './infoCard.component'
-import Navbar from './navbar.component'
+import React from "react";
+import InfoCard from "./infoCard.component";
+import Navbar from "./navbar.component";
+import { useState, useEffect } from "react";
 
 export default function Technical() {
+  const [sec, setsec] = useState(false);
+  useEffect(() => {
+    const fun = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKENDURL}/technical`
+        );
+        const data = await response.json();
+        console.log(data);
+        setsec(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fun();
+  }, []);
   return (
     <>
       <Navbar activeClass="technical" />
@@ -27,19 +44,17 @@ export default function Technical() {
                     <h3>Technical Secretary</h3>
                     <ul className="probootstrap-side-menu">
                       <li>
-                        {/* <!-- Tech --> */}
-                        {/* update with backend */}
-                        <InfoCard
-                          info={{
-                            name: "Surendra Singh",
-                            image: "",
-                            position: "Technical Secretary",
-                            facebook_id:
-                              "https://www.facebook.com/surendrasingh24",
-                            email_id:
-                              "technical_secretary@students.iitmandi.ac.in",
-                          }}
-                        />
+                        {sec && (
+                          <InfoCard
+                            info={{
+                              name: `${sec.name}`,
+                              image: `${sec.image}`,
+                              position: `${sec.post}`,
+                              facebook_id: `${sec.facebook}`,
+                              email_id: `${sec.email}`,
+                            }}
+                          />
+                        )}
                       </li>
                     </ul>
                   </div>
@@ -85,11 +100,11 @@ export default function Technical() {
                     <li>Entrepreneurship Cell</li>
                     <li>Kamand BioEngineering Group</li>
                   </ul>
-                  Each club is coordinated by two coordinators and comprises
-                  of students of similar interest. Each club is advised by a
+                  Each club is coordinated by two coordinators and comprises of
+                  students of similar interest. Each club is advised by a
                   faculty advisor and a co-advisor. All the clubs are open for
-                  all the students of IIT Mandi. However, a core team is
-                  formed for efficient running of the club.
+                  all the students of IIT Mandi. However, a core team is formed
+                  for efficient running of the club.
                   <p></p>
                 </div>
               </div>
