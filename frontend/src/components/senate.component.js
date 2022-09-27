@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import InfoCard from "./infoCard.component";
 import Navbar from "./navbar.component";
-import { useState, useEffect } from "react";
 export default function Senate() {
 
   const [senate, setSenate] = useState([]);

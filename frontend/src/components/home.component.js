@@ -10,7 +10,7 @@ export default function Home() {
       try {
         const response = await fetch(`${process.env.REACT_APP_BACKENDURL}/`);
         const data = await response.json();
-        setSecretaries(data);
+        setSecretaries(data.data);
       } catch (err) {
         console.log(err);
       }
@@ -65,7 +65,6 @@ export default function Home() {
           </div>
 
           <div className="row">
-            {/* TODO: render InfoCard with backend data */}
             {secretaries.map((sec) => {
               return (
                 <div key={sec._id} className="col-md-3 col-sm-6">

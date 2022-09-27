@@ -11,7 +11,7 @@ export default function Hostel() {
           `${process.env.REACT_APP_BACKENDURL}/hostel`
         );
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         setsec(data);
       } catch (err) {
         console.log(err);
