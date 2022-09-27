@@ -3,24 +3,25 @@ import Navbar from "./navbar.component";
 
 export default function News() {
   const [news, setNews] = useState([]);
-  useEffect(()=>{
-    const fun =async()=>{
+
+  useEffect(() => {
+    const fun = async () => {
       try {
-        const response=await fetch(
+        const response = await fetch(
           `${process.env.REACT_APP_BACKENDURL}/news`
         );
-        const data =await response.json();
-        console.log(data)
+        const data = await response.json();
         setNews(data);
       } catch (err) {
         console.log(err);
       }
-    }
+
+    };
     fun();
-  },[]);
+  }, []);
   return (
     <>
-      <Navbar activeclassName="more" />
+      <Navbar activeClass="more" />
       <section className="probootstrap-section probootstrap-section-colored">
         <div className="container">
           <div className="row">
@@ -49,6 +50,7 @@ export default function News() {
                       <br />
                       <br />
                     </div>
+
                     })}
                   </div>
                 </div>

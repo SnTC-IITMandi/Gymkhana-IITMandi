@@ -1,23 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import InfoCard from "./infoCard.component";
 import Navbar from "./navbar.component";
 import { useState, useEffect } from "react";
 export default function Senate() {
-  const [sec, setsec] = useState(false);
+
+  const [senate, setSenate] = useState([]);
+  const [sec, setSec] = useState(false);
+
   useEffect(() => {
-    const fun = async () => {
+    const fun1 = async () => {
+      try {
+        // TODO: add senate_members get link in backend
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKENDURL}/senate_members`
+        );
+        const data = await response.json();
+        data.sort((a, b) => (a.rollno > b.rollno ? 1 : -1));
+        setSenate(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    const fun2 = async () => {
       try {
         const response = await fetch(
           `${process.env.REACT_APP_BACKENDURL}/senate`
         );
         const data = await response.json();
-        console.log(data);
-        setsec(data);
+
+        setSec(data);
       } catch (err) {
         console.log(err);
       }
     };
-    fun();
+
+    fun1();
+    fun2();
   }, []);
 
   return (
@@ -43,14 +61,16 @@ export default function Senate() {
                     <h3>Academic Secretary</h3>
                     <ul className="probootstrap-side-menu">
                       <li>
+
+                        {/* <!-- Add here Academic secretary --> */}
                         {sec && (
                           <InfoCard
                             info={{
-                              name: `${sec.name}`,
-                              image: `${sec.image}`,
-                              position: `${sec.post}`,
-                              facebook_id: `${sec.facebook}`,
-                              email_id: `${sec.email}`,
+                              name: sec.name,
+                              image: sec.img,
+                              position: sec.post,
+                              facebook_id: sec.facebook,
+                              email_id: sec.email,
                             }}
                           />
                         )}
@@ -103,141 +123,17 @@ export default function Senate() {
                       </tr>
                     </thead>
                     <tbody>
-                      {/* <!-- Seniors to Juniors --> */}
-                      <tr>
-                        <td data-label="Name">Jatin Nimawat</td>
-                        <td data-label="Roll">B17014</td>
-                        <td data-label="Branch">CE</td>
-                        <td data-label="Phone">93511 16924</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Saurabh Bansal</td>
-                        <td data-label="Roll">B17059</td>
-                        <td data-label="Branch">CSE</td>
-                        <td data-label="Phone">78381 82490</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Piyush Bafna</td>
-                        <td data-label="Roll">B17020</td>
-                        <td data-label="Branch">EE</td>
-                        <td data-label="Phone">83173 45090</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Shreya Lanjewar</td>
-                        <td data-label="Roll">B17142</td>
-                        <td data-label="Branch">ME</td>
-                        <td data-label="Phone">98343 40089</td>
-                      </tr>
-
-                      <tr>
-                        <td data-label="Name">Amit Kumar Jatav</td>
-                        <td data-label="Roll">B18005</td>
-                        <td data-label="Branch">CE</td>
-                        <td data-label="Phone">78774 34200</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Mohib Qureshi</td>
-                        <td data-label="Roll">B18070</td>
-                        <td data-label="Branch">CSE</td>
-                        <td data-label="Phone">85804 12113</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Adarsh Raj</td>
-                        <td data-label="Roll">B18100</td>
-                        <td data-label="Branch">EE</td>
-                        <td data-label="Phone">62049 39583</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Rachit Katewa</td>
-                        <td data-label="Roll">B18021</td>
-                        <td data-label="Branch">ME</td>
-                        <td data-label="Phone">86199 98692</td>
-                      </tr>
-
-                      <tr>
-                        <td data-label="Name">Aarushi Gajri</td>
-                        <td data-label="Roll">B19001</td>
-                        <td data-label="Branch">BioE</td>
-                        <td data-label="Phone">96198 31521</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Sumit Meel</td>
-                        <td data-label="Roll">B19060</td>
-                        <td data-label="Branch">CE</td>
-                        <td data-label="Phone">70238 27650</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Naveen Sai</td>
-                        <td data-label="Roll">B19096</td>
-                        <td data-label="Branch">CSE</td>
-                        <td data-label="Phone">62303 26108</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Sagar Kumar</td>
-                        <td data-label="Roll">B19138</td>
-                        <td data-label="Branch">DSE</td>
-                        <td data-label="Phone">85291 76868</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Yuvraj Singh Bishnoi</td>
-                        <td data-label="Roll">B19063</td>
-                        <td data-label="Branch">EE</td>
-                        <td data-label="Phone">87007 61867</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Aniruddha Prakash</td>
-                        <td data-label="Roll">B19206</td>
-                        <td data-label="Branch">EP</td>
-                        <td data-label="Phone">99992 64455</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Tanisha Gautam</td>
-                        <td data-label="Roll">B19269</td>
-                        <td data-label="Branch">ME</td>
-                        <td data-label="Phone">80917 64728</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Ravneet Kaur</td>
-                        <td data-label="Roll">B20018</td>
-                        <td data-label="Branch">BioE</td>
-                        <td data-label="Phone">82848 60761</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Ravina Chirania</td>
-                        <td data-label="Roll">B20062</td>
-                        <td data-label="Branch">CE</td>
-                        <td data-label="Phone">83024 19118</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Himakshi Gupta</td>
-                        <td data-label="Roll">B20104</td>
-                        <td data-label="Branch">CSE</td>
-                        <td data-label="Phone">83608 83168</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Chaetanya Sharma</td>
-                        <td data-label="Roll">B20152</td>
-                        <td data-label="Branch">DSE</td>
-                        <td data-label="Phone">77172 35885</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Shri Janani Senthil</td>
-                        <td data-label="Roll">B20232</td>
-                        <td data-label="Branch">EE</td>
-                        <td data-label="Phone">90030 91225</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Ravi Suthar</td>
-                        <td data-label="Roll">B20262</td>
-                        <td data-label="Branch">EP</td>
-                        <td data-label="Phone">93517 84683</td>
-                      </tr>
-                      <tr>
-                        <td data-label="Name">Harshit Agarwar</td>
-                        <td data-label="Roll">B20287</td>
-                        <td data-label="Branch">ME</td>
-                        <td data-label="Phone">95697 31862</td>
-                      </tr>
+                      {/* Seniors to Juniors */}
+                      {senate.map((member) => {
+                        return (
+                          <tr key={member._id}>
+                            <td data-label="Name">{member.name}</td>
+                            <td data-label="Roll">{member.rollno}</td>
+                            <td data-label="Branch">{member.branch}</td>
+                            <td data-label="Phone">{member.phoneno}</td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>
