@@ -1,49 +1,61 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import Navbar from "./navbar.component";
 
 export default function News() {
   const [news, setNews] = useState([]);
   useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_BACKENDURL}/news`)
-      .then((result) => 
-      {console.log(result.data)
-      setNews(result.data)})
-      .catch((err) => console.log(err));
+    const fun = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKENDURL}/news`
+        );
+        const data = await response.json();
+        setNews(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fun();
   }, []);
   return (
     <>
       <Navbar activeClass="more" />
-      <section class="probootstrap-section probootstrap-section-colored">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-left section-heading probootstrap-animate fadeInUp probootstrap-animated">
+      <section className="probootstrap-section probootstrap-section-colored">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 text-left section-heading probootstrap-animate fadeInUp probootstrap-animated">
               <h2>News</h2>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="probootstrap-section">
-        <div class="container">
-          <div class="column">
-            <div class="col-md-12">
-              <div class="probootstrap-flex-block">
-                <div class="probootstrap-text probootstrap-animate fadeInUp probootstrap-animated">
-                  <div class="newsitem">
-                    {news.map(element=>{
-                      return<div id="news-display" key={element._id}>
-                      {/* add news here (h3, p, br, br) */}
-                      <h3>
-                        {element.title } | <span>{new Date(element.date).toLocaleDateString()}</span>
-                      </h3>
-                      <p>
-                        {element.description}
-                      </p>
-                      <br />
-                      <br />
-                    </div>
+      <section className="probootstrap-section">
+        <div className="container">
+          <div className="column">
+            <div className="col-md-12">
+              <div className="probootstrap-flex-block">
+                <div className="probootstrap-text probootstrap-animate fadeInUp probootstrap-animated">
+                  <div className="newsitem">
+                    {news.map((element) => {
+                      return (
+                        <div id="news-display" key={element._id}>
+                          {/* add news here (h3, p, br, br) */}
+                          <h3>
+                            {element.title} |{" "}
+                            <span>
+                              {element.date}
+                            </span>
+                          </h3>
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html: element.description,
+                            }}
+                          ></p>
+                          <br />
+                          <br />
+                        </div>
+                      );
                     })}
                   </div>
                 </div>
