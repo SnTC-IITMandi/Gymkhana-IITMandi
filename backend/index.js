@@ -17,8 +17,7 @@ connectDB();
 app.use("/", mainRouter);
 app.use("/news", newsRouter);
 app.get("*", function (req, res) {
-  res.status(404);
-//   res.render("<h1>404 NOT FOUND!</h1>");
+	res.status(404).send("PAGE  NOT  FOUND");
 });
 
 app.listen(port, (err) => {

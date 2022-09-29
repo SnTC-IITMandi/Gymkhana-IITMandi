@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import InfoCard from "./infoCard.component";
 import Navbar from "./navbar.component";
 
 export default function Home() {
+  const [secretaries, setSecretaries] = useState([]);
+
+  useEffect(() => {
+    const fun = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_BACKENDURL}/`);
+        const data = await response.json();
+        setSecretaries(data.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fun();
+  }, []);
   return (
     <>
       <Navbar activeClass="home" />
@@ -51,18 +65,21 @@ export default function Home() {
           </div>
 
           <div className="row">
-            {/* TODO: render InfoCard with backend data */}
-            <div className="col-md-3 col-sm-6">
-              <InfoCard
-                info={{
-                  name: "Surendra Singh",
-                  image: "",
-                  position: "Technical Secretary",
-                  facebook_id: "https://www.facebook.com/surendrasingh24",
-                  email_id: "technical_secretary@students.iitmandi.ac.in",
-                }}
-              />
-            </div>
+            {secretaries.map((sec) => {
+              return (
+                <div key={sec._id} className="col-md-3 col-sm-6">
+                  <InfoCard
+                    info={{
+                      name: sec.name,
+                      image: sec.img,
+                      position: sec.post,
+                      facebook_id: sec.facebook,
+                      email_id: sec.email,
+                    }}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

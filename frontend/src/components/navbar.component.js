@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   let isActive = {
@@ -11,7 +11,7 @@ export default function Navbar(props) {
     literary: "",
     hostel: "",
     senate: "",
-    more: ""
+    more: "",
   };
   isActive[props.activeClass] = "active";
 
@@ -64,7 +64,7 @@ export default function Navbar(props) {
               <Link to="/senate">Senate</Link>
             </li>
             <li className={`dropdown2 ${isActive.more}`}>
-              <Link to="//#">More</Link>
+              <Link>More</Link>
               <div className="dropdown-content">
                 <Link to="/wall_of_fame">Wall of Fame</Link>
                 ---
