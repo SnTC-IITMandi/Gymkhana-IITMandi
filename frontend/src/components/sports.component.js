@@ -11,8 +11,7 @@ export default function Sports() {
           `${process.env.REACT_APP_BACKENDURL}/sports`
         );
         const data = await response.json();
-        console.log(data);
-        setsec(data);
+        setsec(data.data);
       } catch (err) {
         console.log(err);
       }

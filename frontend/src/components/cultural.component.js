@@ -8,11 +8,10 @@ export default function Cultural() {
     const fun = async () => {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_BACKENDURL}/technical`
+          `${process.env.REACT_APP_BACKENDURL}/cultural`
         );
         const data = await response.json();
-        console.log(data);
-        setsec(data);
+        setsec(data.data);
       } catch (err) {
         console.log(err);
       }

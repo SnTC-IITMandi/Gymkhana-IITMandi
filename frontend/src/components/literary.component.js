@@ -11,8 +11,7 @@ export default function Literary() {
           `${process.env.REACT_APP_BACKENDURL}/literary`
         );
         const data = await response.json();
-        console.log(data);
-        setsec(data);
+        setsec(data.data);
       } catch (err) {
         console.log(err);
       }

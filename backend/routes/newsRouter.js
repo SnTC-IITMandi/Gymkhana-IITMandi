@@ -10,13 +10,10 @@ router.route("/").get(async(req,res)=>{
           status:'success',
           data:secretary,
         }
-        res.status(200).send(context.data)
+        res.status(200).json(context.data)
       } catch (err) {
         res.status(400).json({Error:err})
       }
-    // news.find()
-    // .then(news=>res.json(news))
-    // .catch(err => res.status(400).json('Error: ' + err))
 });
 
 module.exports = router;

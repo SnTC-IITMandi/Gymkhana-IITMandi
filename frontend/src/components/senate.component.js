@@ -7,34 +7,18 @@ export default function Senate() {
   const [sec, setSec] = useState(false);
 
   useEffect(() => {
-    const fun1 = async () => {
-      try {
-        // TODO: add senate_members get link in backend
-        const response = await fetch(
-          `${process.env.REACT_APP_BACKENDURL}/senate_members`
-        );
-        const data = await response.json();
-        data.sort((a, b) => (a.rollno > b.rollno ? 1 : -1));
-        setSenate(data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    const fun2 = async () => {
+    const fun = async () => {
       try {
         const response = await fetch(
           `${process.env.REACT_APP_BACKENDURL}/senate`
         );
         const data = await response.json();
-
-        setSec(data);
+        setsec(data.data);
       } catch (err) {
         console.log(err);
       }
     };
-
-    fun1();
-    fun2();
+    fun();
   }, []);
 
   return (

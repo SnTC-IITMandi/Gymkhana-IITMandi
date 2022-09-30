@@ -12,8 +12,7 @@ export default function Technical() {
           `${process.env.REACT_APP_BACKENDURL}/technical`
         );
         const data = await response.json();
-        console.log(data);
-        setsec(data);
+        setsec(data.data);
       } catch (err) {
         console.log(err);
       }
