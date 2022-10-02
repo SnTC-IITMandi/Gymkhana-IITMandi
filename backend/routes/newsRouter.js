@@ -10,7 +10,7 @@ router.route("/").get(async(req,res)=>{
           status:'success',
           data:newsList,
         }
-        res.status(200).json(context.data)
+        res.status(200).json(context)
       } catch (err) {
         res.status(400).json({Error:err})
       }

@@ -10,7 +10,8 @@ export default function Home() {
       try {
         const response = await fetch(`${process.env.REACT_APP_BACKENDURL}/`);
         const data = await response.json();
-        setSecretaries(data.data);
+        const currSec = data.data.filter((sec) => sec.year === 2022);
+        setSecretaries(currSec);
       } catch (err) {
         console.log(err);
       }

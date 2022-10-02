@@ -11,7 +11,7 @@ export default function News() {
           `${process.env.REACT_APP_BACKENDURL}/news`
         );
         const data = await response.json();
-        setNews(data);
+        setNews(data.data);
       } catch (err) {
         console.log(err);
       }

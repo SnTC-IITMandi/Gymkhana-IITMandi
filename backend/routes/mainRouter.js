@@ -20,7 +20,6 @@ router.route("/technical").get(async (req, res) => {
       post: "Technical",
       year: 2022,
     });
-    console.log(secretary);
     const context = {
       status: "success",
       data: secretary,
@@ -57,7 +56,6 @@ router.route("/cultural").get(async (req, res) => {
       status: "success",
       data: secretary,
     };
-    console.log(context);
     res.status(200).json(context);
   } catch (err) {
     res.status(400).json({ Error: err });
