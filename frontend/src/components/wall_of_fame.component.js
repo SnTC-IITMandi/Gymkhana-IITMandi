@@ -1,17 +1,92 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import InfoCard from "./infoCard.component";
 import Navbar from "./navbar.component";
 
 export default function WallOfFame() {
+  const [secretariesRender, setSecretariesRender] = useState([]);
+
+  useEffect(() => {
+    const fun = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_BACKENDURL}/`);
+        const data = await response.json();
+        // make secretaries html
+        const groupByYear = data.data.reduce(function (memo, x) {
+          if (!memo[x["year"]]) {
+            memo[x["year"]] = [];
+          }
+          memo[x["year"]].push(x);
+          return memo;
+        }, {});
+        // ordering by year in desc and creating html
+        const render = Object.keys(groupByYear)
+          .sort()
+          .reverse()
+          .map((key, index) => {
+            return (
+              <div key={key}>
+                <button
+                  className={`accordion ${index === 0 && "active"} above-part`}
+                  onClick={accordionClick}
+                >
+                  {`Academic Year ${key}-${(Number(key) % 2000) + 1}`}
+                </button>
+                <div
+                  className="panel"
+                  style={{ display: index === 0 ? "block" : "none" }}
+                >
+                  <section
+                    className="probootstrap-section secretaries"
+                    style={{ margin: 100 + "px" }}
+                  >
+                    <div className="container">
+                      <div className="row">
+                        <div className="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate fadeInUp probootstrap-animated">
+                          <h2>{`Academic Year ${key}-${
+                            (Number(key) % 2000) + 1
+                          }`}</h2>
+                        </div>
+                      </div>
+                      <div className="row">
+                        {groupByYear[key].map((sec) => {
+                          return (
+                            <div key={sec._id} className="col-md-3 col-sm-6">
+                              <InfoCard
+                                info={{
+                                  name: sec.name,
+                                  image: sec.img,
+                                  position: sec.post,
+                                  facebook_id: sec.facebook,
+                                  email_id: sec.email,
+                                }}
+                              />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            );
+          });
+        setSecretariesRender(render);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fun();
+  }, []);
+
   const accordionClick = (e) => {
     e.preventDefault();
-    if (e.target.classList.contains('active')) {
+    if (e.target.classList.contains("active")) {
       e.target.nextElementSibling.style.display = "none";
     } else {
       e.target.nextElementSibling.style.display = "block";
     }
-    e.target.classList.toggle('active');
-  }
+    e.target.classList.toggle("active");
+  };
 
   return (
     <>
@@ -25,39 +100,7 @@ export default function WallOfFame() {
           </div>
         </div>
       </section>
-      {/* TODO: dynamically add secretaries of all years till now */}
-      {/* <!-- Year 2021-22 --> */}
-      <button className="accordion active above-part" onClick={accordionClick}>
-        Academic Year 2021-22
-      </button>
-      <div className="panel" style={{ display: "block" }}>
-        <section
-          className="probootstrap-section secretaries"
-          style={{ margin: 100 + "px" }}
-        >
-          <div className="container">
-            <div className="row">
-              <div className="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate fadeInUp probootstrap-animated">
-                <h2>Academic Year 2020-21</h2>
-              </div>
-            </div>
-            <div className="row">
-              {/* update secretaries with backend */}
-              <div className="col-md-3 col-sm-6">
-                <InfoCard
-                  info={{
-                    name: "Surendra Singh",
-                    image: "",
-                    position: "Technical Secretary",
-                    facebook_id: "https://www.facebook.com/surendrasingh24",
-                    email_id: "technical_secretary@students.iitmandi.ac.in",
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
+      {secretariesRender}
     </>
   );
 }

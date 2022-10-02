@@ -5,12 +5,12 @@ const news = require("../models/news.model");
 
 router.route("/").get(async(req,res)=>{
     try {
-        const secretary=await news.find()
+        const newsList=await news.find()
         const context={
           status:'success',
-          data:secretary,
+          data:newsList,
         }
-        res.status(200).json(context.data)
+        res.status(200).json(context)
       } catch (err) {
         res.status(400).json({Error:err})
       }
