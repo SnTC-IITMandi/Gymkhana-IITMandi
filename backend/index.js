@@ -4,6 +4,7 @@ const connectDB = require("./config/db");
 const dotenv = require("dotenv");
 const mainRouter = require("./routes/mainRouter");
 const newsRouter = require("./routes/newsRouter");
+const newsRouter = require("./routes/senateRouter");
 
 dotenv.config({ path: "./config/config.env" });
 connectDB();
@@ -16,6 +17,7 @@ connectDB();
 
 app.use("/", mainRouter);
 app.use("/news", newsRouter);
+app.use("/senate_members", newsRouter);
 app.get("*", function (req, res) {
 	res.status(404).send("PAGE  NOT  FOUND");
 });

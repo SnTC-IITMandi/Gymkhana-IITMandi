@@ -3,11 +3,11 @@ import InfoCard from "./infoCard.component";
 import Navbar from "./navbar.component";
 export default function Senate() {
 
-  const [senate, setSenate] = useState([]);
-  const [sec, setSec] = useState(false);
+  const [senateMembers, setSenateMembers] = useState([]);
+  const [sec, setsec] = useState(false);
 
   useEffect(() => {
-    const fun = async () => {
+    const fun1 = async () => {
       try {
         const response = await fetch(
           `${process.env.REACT_APP_BACKENDURL}/senate`
@@ -18,7 +18,23 @@ export default function Senate() {
         console.log(err);
       }
     };
-    fun();
+    fun1();
+
+    const fun2 = async () => {
+      // fetching senate members
+      try {
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKENDURL}/senate_members`
+        );
+        const data = await response.json();
+        // order from seniors to juniors
+        data.data.sort((a, b) => (a.rollno < b.rollno ? 1 : -1));
+        setSenateMembers(data.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fun2();
   }, []);
 
   return (
@@ -107,7 +123,7 @@ export default function Senate() {
                     </thead>
                     <tbody>
                       {/* Seniors to Juniors */}
-                      {senate.map((member) => {
+                      {senateMembers.map((member) => {
                         return (
                           <tr key={member._id}>
                             <td data-label="Name">{member.name}</td>
