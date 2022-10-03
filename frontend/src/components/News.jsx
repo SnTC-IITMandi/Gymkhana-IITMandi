@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./navbar.component";
+import Navbar from "./Navbar";
 
 export default function News() {
   const [news, setNews] = useState([]);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./navbar.component";
+import Navbar from "./Navbar";
 
 const Git = function (props) {
   const user = props.user;

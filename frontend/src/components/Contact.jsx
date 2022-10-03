@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import styles from './contact.css';
-import Navbar from "./navbar.component";
+import Navbar from "./Navbar";
 
 export default function Contact() {
   const isActiveDefault = {
