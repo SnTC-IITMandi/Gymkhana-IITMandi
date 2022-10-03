@@ -1,14 +1,14 @@
 import React from "react";
-import InfoCard from "./infoCard.component";
-import Navbar from "./navbar.component";
+import InfoCard from "./InfoCard";
+import Navbar from "./Navbar";
 import { useState, useEffect } from "react";
-export default function Hostel() {
+export default function Research() {
   const [sec, setsec] = useState(false);
   useEffect(() => {
     const fun = async () => {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_BACKENDURL}/hostel`
+          `${process.env.REACT_APP_BACKENDURL}/research`
         );
         const data = await response.json();
         setsec(data.data);
@@ -18,14 +18,15 @@ export default function Hostel() {
     };
     fun();
   }, []);
+
   return (
     <>
-      <Navbar activeClass="hostel" />
+      <Navbar activeClass="research" />
       <section className="probootstrap-section probootstrap-section-colored">
         <div className="container">
           <div className="row">
             <div className="col-md-12 text-left section-heading probootstrap-animate fadeInUp probootstrap-animated">
-              <h2>Hostel</h2>
+              <h2>Research</h2>
             </div>
           </div>
         </div>
@@ -38,7 +39,7 @@ export default function Hostel() {
               <div className="row probootstrap-gutter0">
                 <div className="col-md-4" id="probootstrap-sidebar">
                   <div className="probootstrap-sidebar-inner probootstrap-overlap probootstrap-animate fadeInUp probootstrap-animated">
-                    <h3>Hostel Affairs Secretary</h3>
+                    <h3>Research Secretary</h3>
                     <ul className="probootstrap-side-menu">
                       <li>
                         {sec && (
@@ -57,7 +58,7 @@ export default function Hostel() {
                   </div>
 
                   <div className="probootstrap-teacher text-center probootstrap-animate fadeInUp probootstrap-animated">
-                    <a className="contacts-link" href="/contacts.html#hostel">
+                    <a className="contacts-link" href="/contacts.html#research">
                       Club Contacts
                     </a>
                   </div>
@@ -66,37 +67,30 @@ export default function Hostel() {
                   className="col-md-7 col-md-push-1  probootstrap-animate fadeInUp probootstrap-animated"
                   id="probootstrap-content"
                 >
-                  <h2>Hostels</h2>
+                  <h2>Research Society</h2>
                   <p>
-                    {/* <!-- Add hostel info here --> */}
-                    Currently, there are six hostels spread over the South
-                    Campus (four) and the North Campus (two) Each hostel is
-                    managed by a Warden, ably assisted by an Assistant Warden,
-                    faculty members, a caretaker and a dedicated team of support
-                    staff and guards. There are two Girls's Hostels, Chandrataal
-                    in South Campus and Gauri Kund in North Campus. Four Boys
-                    Hostels, Suvalsar, Parashar, and Nako in South Campus and
-                    Beaskund in North Campus. Students play an important role in
-                    the management of the hostels. They are represented by
-                    elected secretaries who help the Wardens in the day smooth
-                    running of the hostels. Messes catering to different hostels
-                    provide homely food. Common room is equipped with LCD TVs,
-                    table tennis facilities.
+                    {/* <!-- Add research council info here --> */}
+                    The IIT Mandi Research Club (IITMRC) is an open club for
+                    students of IIT Mandi. It is involved in the research and
+                    innovative activities to make new contacts, catch up with
+                    junior students, develop new opportunities and keep up to
+                    date with the latest developments in science and technology.
+                    With events to be held in the near future, it is a way to
+                    meet with like-minded graduates and scholars with an
+                    opportunity to create and maintain professional and personal
+                    contacts all within an internal network. It consists of a
+                    committee of scholars from almost all the disciplines. This
+                    will help in a better communication between the scholars
+                    themselves and undergraduates. This committee forms the
+                    basis of research council of IIT Mandi headed by the
+                    research secretary.
                   </p>
-                  The south campus has the following hostels-
-                  <ul>
-                    <li>Nako</li>
-                    <li>Prashar</li>
-                    <li>Suvalsar</li>
-                    <li>Chandrataal</li>
-                  </ul>
-                  The north campus has the following hostels-
-                  <ul>
-                    <li>Beaskund</li>
-                    <li>Gaurikund</li>
-                    <li>Suraj Tal</li>
-                    <li>Dashir</li>
-                  </ul>
+                  Followings are the parts of Research Society:
+                  <ol>
+                    <li>SCRI</li>
+                    <li>IEEE Students</li>
+                    <li>ACM Students</li>
+                  </ol>
                 </div>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import InfoCard from "./infoCard.component";
-import Navbar from "./navbar.component";
+import InfoCard from "./InfoCard";
+import Navbar from "./Navbar";
 
 export default function Home() {
   const [secretaries, setSecretaries] = useState([]);
