@@ -13,7 +13,7 @@ export default function Senate() {
           `${process.env.REACT_APP_BACKENDURL}/senate`
         );
         const data = await response.json();
-        setsec(data.data);
+        setSec(data.data);
       } catch (err) {
         console.log(err);
       }
