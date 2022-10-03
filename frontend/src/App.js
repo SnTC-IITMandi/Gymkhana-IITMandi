@@ -1,18 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Cultural from "./components/cultural.component.js";
-import Footer from "./components/footer.component.js";
-import Home from "./components/home.component.js";
-import Hostel from "./components/hostel.component.js";
-import Senate from "./components/senate.component.js";
-import Technical from "./components/technical.component.js";
-import Literary from "./components/literary.component.js";
-import Research from "./components/research.component.js";
-import Sports from "./components/sports.component.js";
-import Contact from "./components/contact.component.js";
-import WallOfFame from "./components/wall_of_fame.component.js";
-import Contributors from "./components/contributors.component.js";
-import News from "./components/news.component";
+import Cultural from "./components/Cultural.jsx";
+import Footer from "./components/Footer.jsx";
+import Home from "./components/Home.jsx";
+import Hostel from "./components/Hostel.jsx";
+import Senate from "./components/Senate.jsx";
+import Technical from "./components/Technical.jsx";
+import Literary from "./components/Literary.jsx";
+import Research from "./components/Research.jsx";
+import Sports from "./components/Sports.jsx";
+import Contact from "./components/Contact.jsx";
+import WallOfFame from "./components/WallOfFame.jsx";
+import Contributors from "./components/Contributors.jsx";
+import News from "./components/News";
 
 function App() {
   return (

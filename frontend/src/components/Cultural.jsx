@@ -1,6 +1,6 @@
 import React from "react";
-import InfoCard from "./infoCard.component";
-import Navbar from "./navbar.component";
+import InfoCard from "./InfoCard";
+import Navbar from "./Navbar";
 import { useState, useEffect } from "react";
 export default function Cultural() {
   const [sec, setsec] = useState(false);
