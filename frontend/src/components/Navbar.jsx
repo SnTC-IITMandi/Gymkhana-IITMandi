@@ -38,7 +38,7 @@ export default function Navbar(props) {
         </div>
 
         <div id="navbar-collapse" className="navbar-collapse collapse">
-          <ul className="nav navbar-nav navbar-right">
+          <ul className="nav navbar-nav navbar-right" id="navlist">
             <li className={isActive.home}>
               <Link to="/">Home</Link>
             </li>
@@ -63,16 +63,16 @@ export default function Navbar(props) {
             <li className={isActive.senate}>
               <Link to="/senate">Senate</Link>
             </li>
-            <li className={`dropdown2 ${isActive.more}`}>
+            <li className={`dropdown2 ${isActive.more}`} id="sidelist">
               <Link>More</Link>
               <div className="dropdown-content">
-                <Link to="/wall_of_fame">Wall of Fame</Link>
+                <Link to="/wall_of_fame" id="color">Wall of Fame</Link>
                 ---
-                <Link to="/contributors">Contributors</Link>
+                <Link to="/contributors" id="color">Contributors</Link>
                 ---
-                <Link to="/contacts">Contacts</Link>
+                <Link to="/contacts" id="color">Contacts</Link>
                 ---
-                <Link to="/news">News</Link>
+                <Link to="/news" id="color">News</Link>
               </div>
             </li>
           </ul>

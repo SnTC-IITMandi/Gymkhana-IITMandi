@@ -94,30 +94,6 @@ a:hover, a:focus, a:active {
   margin-bottom: 0;
 }
 
-.probootstrap-page-wrapper {
-  max-width: 1500px;
-  margin: 0 auto;
-  background: #ffffff;
-}
-
-@media screen and (max-width: 1500px) {
-  .probootstrap-page-wrapper {
-    max-width: 1200px;
-  }
-  .probootstrap-page-wrapper .container {
-    max-width: 1000px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .probootstrap-page-wrapper {
-    max-width: 960px;
-  }
-  .probootstrap-page-wrapper .container {
-    max-width: 900px;
-  }
-}
-
 .probootstrap-sidebar-inner {
   background: #ffffff;
   padding: 40px;
@@ -263,6 +239,10 @@ a:hover, a:focus, a:active {
 .probootstrap-navbar .navbar-toggle:hover {
   background-color: transparent;
 }
+/* .probootstrap-navbar .navbar-toggle:focus,
+.probootstrap-navbar .navbar-toggle:hover {
+  background-color: transparent;
+} */
 
 .probootstrap-navbar .navbar-toggle {
   border: none;
@@ -385,17 +365,7 @@ a:hover, a:focus, a:active {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.probootstrap-navbar .dropdown > .dropdown-menu > li a:hover {
-  border-top: none;
-  background: #ffffff;
-  color: #49D292;
-}
 
-.probootstrap-navbar .dropdown > .dropdown-menu > li.open > a, .probootstrap-navbar .dropdown > .dropdown-menu > li:hover > a, .probootstrap-navbar .dropdown > .dropdown-menu > li:focus > a, .probootstrap-navbar .dropdown > .dropdown-menu > li:active > a {
-  border-top: none;
-  color: #49D292;
-  background: #ffffff;
-}
 
 .probootstrap-navbar .dropdown > .dropdown-menu > li.dropdown-submenu.open > a, .probootstrap-navbar .dropdown > .dropdown-menu > li.dropdown-submenu:hover > a, .probootstrap-navbar .dropdown > .dropdown-menu > li.dropdown-submenu:focus > a, .probootstrap-navbar .dropdown > .dropdown-menu > li.dropdown-submenu:active > a {
   border-top: none;
@@ -478,12 +448,6 @@ a:hover, a:focus, a:active {
   }
 }
 
-.probootstrap-navbar .navbar-nav > li > a {
-  color: black;
-  font-size: 15px;
-  position: relative;
-}
-
 @media screen and (max-width: 768px) {
   .probootstrap-navbar .navbar-nav > li > a {
     padding-top: 8px;
@@ -492,22 +456,6 @@ a:hover, a:focus, a:active {
   }
 }
 
-.probootstrap-navbar .navbar-nav > li > a:hover {
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.probootstrap-navbar .navbar-nav > li > a:hover, .probootstrap-navbar .navbar-nav > li > a:focus, .probootstrap-navbar .navbar-nav > li > a:active {
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.probootstrap-navbar .navbar-nav > li.open > a:hover, .probootstrap-navbar .navbar-nav > li.open > a:focus, .probootstrap-navbar .navbar-nav > li.open > a {
-  background: none;
-}
-
-.probootstrap-navbar .navbar-nav > li.active > a {
-  background: none !important;
-  color: #49D292 !important;
-}
 
 @media screen and (max-width: 768px) {
   .probootstrap-navbar .navbar-nav > li.active > a {
@@ -1032,10 +980,7 @@ a:hover, a:focus, a:active {
   }
 }
 
-/* .lead {
-  font-size: 18px;
-  line-height: 32px;
-} */
+
 
 .probootstrap-cta {
   padding: 3em 0;
@@ -3112,25 +3057,7 @@ a:hover, a:focus, a:active {
   }
 
 }
-/*.animate_dropdown{
-  transform-origin: top center;
-  animation: translateX 300ms (num * 60ms) ease-in-out forwards;
-}
-@keyframes translateX {
-  0% {
-    opacity: 0;
-    transform: translateX(60px);
-  }
 
-  80% {
-    transform: translateX(-5px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}*/
 
 .dropdown-content a{
   color: black;
@@ -3174,9 +3101,9 @@ a:hover, a:focus, a:active {
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .accordion:hover {
+/* .active, .accordion:hover {
   background-color: #ccc;
-}
+} */
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
@@ -3187,7 +3114,6 @@ a:hover, a:focus, a:active {
 }
 
 .accordion:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
   font-size: 13px;
   color: #777;
   float: right;
@@ -3200,4 +3126,19 @@ a:hover, a:focus, a:active {
 
 .above-part{
   margin-top: 15px;
+}
+@media screen and (min-width:770px) and (max-width:2000px) {
+  
+  .probootstrap-navbar #navbar-collapse #navlist{
+    height: 90px;
+  }
+}
+.probootstrap-navbar #navbar-collapse #navlist #sidelist .dropdown-content #color{
+color: #6a41ed;
+}
+.probootstrap-navbar #navbar-collapse #navlist >li:hover{
+  background-color: #fff;
+}
+.probootstrap-navbar #navbar-collapse #navlist >li:focus{
+  background-color: #fff;
 }
