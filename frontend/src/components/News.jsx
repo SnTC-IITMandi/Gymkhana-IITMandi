@@ -44,8 +44,7 @@ export default function News() {
                       <h3>
                         {element.title } | <span>{new Date(element.date).toLocaleDateString()}</span>
                       </h3>
-                      <p>
-                        {element.description}
+                      <p dangerouslySetInnerHTML={{__html:element.description}}>
                       </p>
                       <br />
                       <br />
