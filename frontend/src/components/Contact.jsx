@@ -3,6 +3,53 @@ import { useEffect } from "react";
 // import styles from './contact.css';
 import Navbar from "./Navbar";
 
+function Hostel({hostels}){
+  <section id="content5">
+				<div align="center">
+				</div>
+				<div style="overflow-x: scroll;">
+					<table className="table">
+						<tbody>
+							<tr>
+								<th className='tg-i6ua'>Hostel<br/></th>
+								<th className='tg-03to'>Hostel Secretary<br/></th>
+								<th className='tg-03to'>Post</th>
+								<th className='tg-03to'>Email ID</th>
+								<th className='tg-03to'></th>
+								<th className='tg-kr4b'>Warden & Asst. Warden</th>
+								<th className='tg-03to'>E-mail ID</th>
+							</tr>
+              {hostels.map(hostel=>{
+                return<>
+                <tr>
+								<td className='tg-i6ua'><br/></td>
+								<td className='tg-03to'><br/></td>
+								<td className='tg-03to'></td>
+								<td className='tg-03to'></td>
+								<td className='tg-03to'></td>
+								<td className='tg-kr4b'></td>
+								<td className='tg-03to'></td>
+							</tr>
+              {hostel.secretaries.map((secretary,index)=>{
+                return <tr>
+								<td className='tg-i6ua'>{index===0 && hostel.hostel_name}<br/></td>
+								<td className='tg-03to'>{seceretary.name}<br/></td>
+								<td className='tg-03to'>{secretary.post} Secretary</td>
+								<td className='tg-03to'>{secretary.email}</td>
+								<td className='tg-03to'></td>
+								<td className='tg-kr4b'>{index===0 && hostel.warden}</td>
+								<td className='tg-03to'>{index===0 && hostel.warden_email}</td>
+							</tr>
+
+              })}
+              </>
+              })}
+							
+						</tbody>
+					</table>
+				</div>
+			</section>
+}
 function Society({ society }) {
   return (
     <>
@@ -109,7 +156,7 @@ export default function Contact() {
 
   return (
     <div className="contactgym">
-      <Navbar activeClass="more" />
+      <Navbar activeclassName="more" />
       <section className="probootstrap-section probootstrap-section-colored">
         <div className="container">
           <div className="row">
