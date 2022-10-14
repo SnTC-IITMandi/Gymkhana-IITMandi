@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 // import styles from './contact.css';
 import Navbar from "./Navbar";
 
@@ -49,7 +50,73 @@ function Hostel({hostels}){
 				</div>
 			</section>
 }
+function Society({ society }) {
+  return (
+    <>
+      <section>
+        <br />
+        <div align="center">
+          <p>{`${society.council_name} : ${society.advisor_name} (Advisor)`}</p>
+        </div>
+        <div style={{ overflowX: "scroll" }}>
+          <table className="table">
+            <tbody>
+              <tr>
+                <th className="tg-i6ua">
+                  Name of Club
+                  <br />
+                </th>
+                <th className="tg-03to">E-mail Id of Club</th>
+                <th className="tg-03to">
+                  Club Coordinator
+                  <br />
+                </th>
+                <th className="tg-03to">E-mail Id</th>
+                <th className="tg-03to">Contact No.</th>
+
+                <th className="tg-kr4b">Faculty Advisors</th>
+              </tr>
+              {/* clubs */}
+              {society.clubs.map((club) => {
+                return (
+                  <>
+                    {club.coordinators.map((coordinator, index) => {
+                      return (
+                        <tr>
+                          <td className="tg-i6ua">
+                            {index === 0 && club.name}
+                            <br />
+                          </td>
+                          <td className="tg-03to">
+                            {index === 0 && club.email}
+                          </td>
+                          <td className="tg-03to">
+                            {coordinator.name}
+                            <br />
+                          </td>
+                          <td className="tg-03to">{coordinator.email}</td>
+                          <td className="tg-03to">{coordinator.contact}</td>
+
+                          <td class="tg-kr4b">
+                            {index === 0 && club.faculty_advisor}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </>
+  );
+}
+
 export default function Contact() {
+  const [activeElement, setActiveElement] = useState();
+  const [society, setSociety] = useState(undefined);
   const isActiveDefault = {
     technical: 0,
     research: 0,
@@ -67,6 +134,25 @@ export default function Contact() {
     temp[e.target.previousSibling.id] = 1;
     setIsActive(temp);
   };
+
+  useEffect(() => {
+    //update society here
+    const temp = Object.keys(isActive).find((key) => isActive[key] === 1);
+    setActiveElement(temp);
+    const fun = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKENDURL}/society/${temp}`
+        );
+        const data = await response.json();
+        setSociety(data.data);
+      } catch (err) {
+        setSociety(undefined);
+        console.log(err);
+      }
+    };
+    fun();
+  }, [isActive]);
 
   return (
     <div className="contactgym">
@@ -141,126 +227,12 @@ export default function Contact() {
           Research
         </label>
         {/* change data dynamically */}
-        <section>
-          <br />
-          <div align="center">
-            <p>
-              Science & Technology Council : Dr. Srikant Srinivasan (Advisor)
-            </p>
-          </div>
-          <div style={{ overflowX: "scroll" }}>
-            <table className="table">
-              <tbody>
-                <tr>
-                  <th className="tg-i6ua">
-                    Name of Club
-                    <br />
-                  </th>
-                  <th className="tg-03to">E-mail Id of Club</th>
-                  <th className="tg-03to">
-                    Club Coordinator
-                    <br />
-                  </th>
-                  <th className="tg-03to">E-mail Id</th>
-                  <th className="tg-03to">Contact No.</th>
-
-                  <th className="tg-kr4b">Faculty Advisors</th>
-                </tr>
-
-                {/* <!-- PC --> */}
-                <tr>
-                  <td className="tg-i6ua">
-                    Programming Club
-                    <br />
-                  </td>
-                  <td className="tg-03to">pc@iitmandi.ac.in</td>
-                  <td className="tg-03to">
-                    Subhash Suman
-                    <br />
-                  </td>
-                  <td className="tg-03to">b18088@students.iitmandi.ac.in</td>
-                  <td className="tg-03to">7703813759</td>
-
-                  <td className="tg-kr4b">Dr. Sreelakshmi Manjunath</td>
-                </tr>
-                <tr>
-                  <td className="tg-i6ua">
-                    <br />
-                  </td>
-                  <td className="tg-03to"></td>
-                  <td className="tg-03to">
-                    Saransh Jain
-                    <br />
-                  </td>
-                  <td className="tg-03to">b18191@students.iitmandi.ac.in</td>
-                  <td className="tg-03to">7300067222</td>
-
-                  <td className="tg-kr4b"></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="content1">
-          <div align="center">
-            <p>
-              Science & Technology Council : Dr. Srikant Srinivasan (Advisor)
-            </p>
-          </div>
-          <div style={{ overflowX: "scroll" }}>
-            <table className="table">
-              <tbody>
-                <tr>
-                  <th className="tg-i6ua">
-                    Name of Club
-                    <br />
-                  </th>
-                  <th className="tg-03to">E-mail Id of Club</th>
-                  <th className="tg-03to">
-                    Club Coordinator
-                    <br />
-                  </th>
-                  <th className="tg-03to">E-mail Id</th>
-                  <th className="tg-03to">Contact No.</th>
-
-                  <th className="tg-kr4b">Faculty Advisors</th>
-                </tr>
-
-                {/* <!-- PC --> */}
-                <tr>
-                  <td className="tg-i6ua">
-                    Programming Club
-                    <br />
-                  </td>
-                  <td className="tg-03to">pc@iitmandi.ac.in</td>
-                  <td className="tg-03to">
-                    Subhash Suman
-                    <br />
-                  </td>
-                  <td className="tg-03to">b18088@students.iitmandi.ac.in</td>
-                  <td className="tg-03to">7703813759</td>
-
-                  <td className="tg-kr4b">Dr. Sreelakshmi Manjunath</td>
-                </tr>
-                <tr>
-                  <td className="tg-i6ua">
-                    <br />
-                  </td>
-                  <td className="tg-03to"></td>
-                  <td className="tg-03to">
-                    Saransh Jain
-                    <br />
-                  </td>
-                  <td className="tg-03to">b18191@students.iitmandi.ac.in</td>
-                  <td className="tg-03to">7300067222</td>
-
-                  <td className="tg-kr4b"></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+        {(activeElement === "technical" && society) && <Society society={society} />}
+        {(activeElement === "research"  && society)&& <Society society={society} />}
+        {(activeElement === "cultural"  && society)&& <Society society={society} />}
+        {(activeElement === "literary"  && society)&& <Society society={society} />}
+        {/* {(activeElement === "hostel"  && society)&& <Hostel society={society} />} */}
+        
       </main>
     </div>
   );
