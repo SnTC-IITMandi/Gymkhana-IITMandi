@@ -13,7 +13,7 @@ import Contact from "./components/Contact.jsx";
 import WallOfFame from "./components/WallOfFame.jsx";
 import Contributors from "./components/Contributors.jsx";
 import News from "./components/News";
-
+import Error from "./components/Error404"
 function App() {
   return (
     <div className="probootstrap-page-wrapper">
@@ -31,6 +31,7 @@ function App() {
           <Route path="/wall_of_fame" element={<WallOfFame />} />
           <Route path="/contributors" element={<Contributors />} />
           <Route path="/news" element={<News />} />
+          <Route path="*" element={<Error/>}/>
         </Routes>
       </Router>
       <Footer />
