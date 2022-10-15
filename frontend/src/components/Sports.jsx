@@ -2,6 +2,7 @@ import React from "react";
 import InfoCard from "./InfoCard";
 import Navbar from "./Navbar";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 export default function Sports() {
   const [sec, setsec] = useState(false);
   useEffect(() => {
@@ -57,9 +58,9 @@ export default function Sports() {
                   </div>
 
                   <div className="probootstrap-teacher text-center probootstrap-animate fadeInUp probootstrap-animated">
-                    <a className="contacts-link" href="/contacts.html#sports">
+                    <Link className="contacts-link" to="/contacts?type=sports">
                       Contact Coordinators
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div

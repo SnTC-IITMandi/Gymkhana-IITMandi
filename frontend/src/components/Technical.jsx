@@ -2,6 +2,7 @@ import React from "react";
 import InfoCard from "./InfoCard";
 import Navbar from "./Navbar";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Technical() {
   const [sec, setsec] = useState(false);
@@ -59,12 +60,12 @@ export default function Technical() {
                   </div>
 
                   <div className="probootstrap-teacher text-center probootstrap-animate fadeInUp probootstrap-animated fadeInUp probootstrap-animate fadeInUp probootstrap-animatedd fadeInUp probootstrap-animate fadeInUp probootstrap-animated fadeInUp probootstrap-animate fadeInUp probootstrap-animateddd fadeInUp probootstrap-animate fadeInUp probootstrap-animated fadeInUp probootstrap-animate fadeInUp probootstrap-animatedd fadeInUp probootstrap-animate fadeInUp probootstrap-animated fadeInUp probootstrap-animate fadeInUp probootstrap-animatedddd">
-                    <a
+                    <Link
                       className="contacts-link"
-                      href="/contacts.html#technical"
+                      to="/contacts?type=technical"
                     >
                       Club Contacts
-                    </a>
+                    </Link>
                   </div>
                   <div className="probootstrap-teacher text-center probootstrap-animate fadeInUp probootstrap-animated fadeInUp probootstrap-animate fadeInUp probootstrap-animatedd fadeInUp probootstrap-animate fadeInUp probootstrap-animated fadeInUp probootstrap-animate fadeInUp probootstrap-animateddd fadeInUp probootstrap-animate fadeInUp probootstrap-animated fadeInUp probootstrap-animate fadeInUp probootstrap-animatedd fadeInUp probootstrap-animate fadeInUp probootstrap-animated fadeInUp probootstrap-animate fadeInUp probootstrap-animatedddd">
                     <a

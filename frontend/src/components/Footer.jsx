@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export default function Footer() {
   return (
@@ -37,7 +37,7 @@ export default function Footer() {
                   <a href="http://students.iitmandi.ac.in/">Students</a>
                 </li>
                 <li>
-                  <a href="contacts.html">Contact</a>
+                  <a href="contacts">Contact</a>
                 </li>
                 <li>
                   <a href="https://github.com/KamandPrompt/Gymkhana-IITMandi">

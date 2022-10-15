@@ -2,6 +2,7 @@ import React from "react";
 import InfoCard from "./InfoCard";
 import Navbar from "./Navbar";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 export default function Cultural() {
   const [sec, setsec] = useState(false);
   useEffect(() => {
@@ -41,23 +42,28 @@ export default function Cultural() {
                     <h3>Cultural Secretary</h3>
                     <ul className="probootstrap-side-menu">
                       <li>
-                        {sec&&<InfoCard
-                          info={{
-                            name: `${sec.name}`,
-                            image: `${sec.image}`,
-                            position: `${sec.post}`,
-                            facebook_id: `${sec.facebook}`,
-                            email_id: `${sec.email}`,
-                          }}
-                        />}
+                        {sec && (
+                          <InfoCard
+                            info={{
+                              name: `${sec.name}`,
+                              image: `${sec.image}`,
+                              position: `${sec.post}`,
+                              facebook_id: `${sec.facebook}`,
+                              email_id: `${sec.email}`,
+                            }}
+                          />
+                        )}
                       </li>
                     </ul>
                   </div>
 
                   <div className="probootstrap-teacher text-center probootstrap-animate fadeInUp probootstrap-animated">
-                    <a className="contacts-link" href="/contacts.html#cultural">
+                    <Link
+                      className="contacts-link"
+                      to="/contacts?type=cultural"
+                    >
                       Club Contacts
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div

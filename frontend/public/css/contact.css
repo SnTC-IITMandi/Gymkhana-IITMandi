@@ -42,43 +42,7 @@ body {
     text-align: center;
 }
 
-.contactgym #content1 {
-    display: none;
-    padding: 20px 0 0;
-    border-top: 1px solid #ddd;
-    text-align: left;
-}
-
-.contactgym #content2 {
-    display: none;
-    padding: 20px 0 0;
-    border-top: 1px solid #ddd;
-    text-align: left;
-}
-
-.contactgym #content3 {
-    display: none;
-    padding: 20px 0 0;
-    border-top: 1px solid #ddd;
-    text-align: left;
-}
-
-.contactgym #content4 {
-    display: none;
-    padding: 20px 0 0;
-    border-top: 1px solid #ddd;
-    text-align: left;
-}
-
-.contactgym #content5 {
-    display: none;
-    padding: 20px 0 0;
-    border-top: 1px solid #ddd;
-    text-align: left;
-}
-
-.contactgym #content6 {
-    display: none;
+.contactgym #content {
     padding: 20px 0 0;
     border-top: 1px solid #ddd;
     text-align: left;

@@ -2,6 +2,7 @@ import React from "react";
 import InfoCard from "./InfoCard";
 import Navbar from "./Navbar";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 export default function Literary() {
   const [sec, setsec] = useState(false);
   useEffect(() => {
@@ -57,9 +58,12 @@ export default function Literary() {
                   </div>
 
                   <div className="probootstrap-teacher text-center probootstrap-animate fadeInUp probootstrap-animated">
-                    <a className="contacts-link" href="/contacts.html#literary">
+                    <Link
+                      className="contacts-link"
+                      to="/contacts?type=literary"
+                    >
                       Club Contacts
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div

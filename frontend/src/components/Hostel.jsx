@@ -2,6 +2,7 @@ import React from "react";
 import InfoCard from "./InfoCard";
 import Navbar from "./Navbar";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 export default function Hostel() {
   const [sec, setsec] = useState(false);
   useEffect(() => {
@@ -57,9 +58,9 @@ export default function Hostel() {
                   </div>
 
                   <div className="probootstrap-teacher text-center probootstrap-animate fadeInUp probootstrap-animated">
-                    <a className="contacts-link" href="/contacts.html#hostel">
+                    <Link className="contacts-link" to="/contacts?type=hostel">
                       Club Contacts
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-// import styles from './contact.css';
+import { useSearchParams } from "react-router-dom";
+
 import Navbar from "./Navbar";
 
-function Hostel({hostels}){
-  <section id="content5">
+function Hostel({ hostels }){
+  return <section id="content">
 				<div align="center">
 				</div>
-				<div style="overflow-x: scroll;">
+				<div style={{overflowX: "scroll"}}>
 					<table className="table">
 						<tbody>
 							<tr>
@@ -19,8 +20,8 @@ function Hostel({hostels}){
 								<th className='tg-kr4b'>Warden & Asst. Warden</th>
 								<th className='tg-03to'>E-mail ID</th>
 							</tr>
-              {hostels.map(hostel=>{
-                return<>
+              {hostels.map((hostel, hostelIndex)=>{
+                return<React.Fragment key={hostelIndex}>
                 <tr>
 								<td className='tg-i6ua'><br/></td>
 								<td className='tg-03to'><br/></td>
@@ -31,9 +32,9 @@ function Hostel({hostels}){
 								<td className='tg-03to'></td>
 							</tr>
               {hostel.secretaries.map((secretary,index)=>{
-                return <tr>
+                return <tr key={index}>
 								<td className='tg-i6ua'>{index===0 && hostel.hostel_name}<br/></td>
-								<td className='tg-03to'>{seceretary.name}<br/></td>
+								<td className='tg-03to'>{secretary.name}<br/></td>
 								<td className='tg-03to'>{secretary.post} Secretary</td>
 								<td className='tg-03to'>{secretary.email}</td>
 								<td className='tg-03to'></td>
@@ -42,7 +43,7 @@ function Hostel({hostels}){
 							</tr>
 
               })}
-              </>
+              </React.Fragment>
               })}
 							
 						</tbody>
@@ -52,8 +53,7 @@ function Hostel({hostels}){
 }
 function Society({ society }) {
   return (
-    <>
-      <section>
+      <section id="content">
         <br />
         <div align="center">
           <p>{`${society.council_name} : ${society.advisor_name} (Advisor)`}</p>
@@ -77,12 +77,12 @@ function Society({ society }) {
                 <th className="tg-kr4b">Faculty Advisors</th>
               </tr>
               {/* clubs */}
-              {society.clubs.map((club) => {
+              {society.clubs.map((club, clubIndex) => {
                 return (
-                  <>
+                  <React.Fragment key={clubIndex}>
                     {club.coordinators.map((coordinator, index) => {
                       return (
-                        <tr>
+                        <tr key={index}>
                           <td className="tg-i6ua">
                             {index === 0 && club.name}
                             <br />
@@ -103,20 +103,21 @@ function Society({ society }) {
                         </tr>
                       );
                     })}
-                  </>
+                  </React.Fragment>
                 );
               })}
             </tbody>
           </table>
         </div>
       </section>
-    </>
   );
 }
 
 export default function Contact() {
+  const [searchParams] = useSearchParams();
   const [activeElement, setActiveElement] = useState();
   const [society, setSociety] = useState(undefined);
+
   const isActiveDefault = {
     technical: 0,
     research: 0,
@@ -125,14 +126,22 @@ export default function Contact() {
     literary: 0,
     hostel: 0,
   };
-  const [isActive, setIsActive] = useState({
-    ...isActiveDefault,
-    technical: 1,
-  });
+  
+  let type = searchParams.get("type");
+  if(!Object.keys(isActiveDefault).includes(type)){
+    // passed parameter not included
+    type = "technical";
+  }
+
+  let initial = {...isActiveDefault};
+  initial[type] = 1;
+  const [isActive, setIsActive] = useState(initial);
+
   const handleClick = (e) => {
     let temp = { ...isActiveDefault };
     temp[e.target.previousSibling.id] = 1;
     setIsActive(temp);
+    setSociety(undefined)
   };
 
   useEffect(() => {
@@ -226,12 +235,15 @@ export default function Contact() {
         <label htmlFor="research" onClick={handleClick}>
           Research
         </label>
+        
         {/* change data dynamically */}
-        {(activeElement === "technical" && society) && <Society society={society} />}
-        {(activeElement === "research"  && society)&& <Society society={society} />}
-        {(activeElement === "cultural"  && society)&& <Society society={society} />}
-        {(activeElement === "literary"  && society)&& <Society society={society} />}
-        {/* {(activeElement === "hostel"  && society)&& <Hostel society={society} />} */}
+        
+        {(activeElement === "technical" && !!society) && <Society society={society} />}
+        {(activeElement === "research"  && !!society) && <Society society={society} />}
+        {(activeElement === "cultural"  && !!society) && <Society society={society} />}
+        {(activeElement === "literary"  && !!society) && <Society society={society} />}
+        {(activeElement === "hostel"  && !!society) && <Hostel hostels={society} />}
+        
         
       </main>
     </div>
