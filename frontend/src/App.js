@@ -19,22 +19,21 @@ function App() {
     <div className="probootstrap-page-wrapper">
       <Router>
         <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/technical" element={<Technical />} />
-          <Route path="/hostel" element={<Hostel />} />
-          <Route path="/senate" element={<Senate />} />
-          <Route path="/research" element={<Research />} />
-          <Route path="/literary" element={<Literary />} />
-          <Route path="/cultural" element={<Cultural />} />
-          <Route path="/sports" element={<Sports />} />
-          <Route path="/contacts" element={<Contact />} />
-          <Route path="/wall_of_fame" element={<WallOfFame />} />
-          <Route path="/contributors" element={<Contributors />} />
-          <Route path="/news" element={<News />} />
+          <Route path="/" element={<><Home /> <Footer /> </>} />
+          <Route path="/technical" element={<><Technical /><Footer/></>} />
+          <Route path="/hostel" element={<><Hostel /><Footer/></>} />
+          <Route path="/senate" element={<><Senate /><Footer/></>} />
+          <Route path="/research" element={<><Research /><Footer/></>} />
+          <Route path="/literary" element={<><Literary /><Footer/></>} />
+          <Route path="/cultural" element={<><Cultural /><Footer/></>} />
+          <Route path="/sports" element={<><Sports /><Footer/></>} />
+          <Route path="/contacts" element={<><Contact /><Footer/></>} />
+          <Route path="/wall_of_fame" element={<><WallOfFame /><Footer/></>} />
+          <Route path="/contributors" element={<><Contributors /><Footer/></>} />
+          <Route path="/news" element={<><News /><Footer/></>} />
           <Route path="*" element={<Error/>}/>
         </Routes>
       </Router>
-      <Footer />
     </div>
   );
 }
