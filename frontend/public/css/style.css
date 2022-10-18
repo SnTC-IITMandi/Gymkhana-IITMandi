@@ -94,6 +94,7 @@ a:hover, a:focus, a:active {
   margin-bottom: 0;
 }
 
+
 .probootstrap-sidebar-inner {
   background: #ffffff;
   padding: 40px;
@@ -3101,9 +3102,9 @@ a:hover, a:focus, a:active {
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-/* .active, .accordion:hover {
+.active.accordion, .accordion:hover {
   background-color: #ccc;
-} */
+}
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
@@ -3114,13 +3115,14 @@ a:hover, a:focus, a:active {
 }
 
 .accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
   font-size: 13px;
   color: #777;
   float: right;
   margin-left: 5px;
 }
 
-.active:after {
+.active.accordion:after {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 

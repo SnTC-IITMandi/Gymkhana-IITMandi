@@ -48,7 +48,7 @@ export default function Technical() {
                           <InfoCard
                             info={{
                               name: `${sec.name}`,
-                              image: `${sec.image}`,
+                              image: `${sec.img}`,
                               position: `${sec.post}`,
                               facebook_id: `${sec.facebook}`,
                               email_id: `${sec.email}`,
