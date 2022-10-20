@@ -1,13 +1,20 @@
 import React from 'react'
+import {Buffer} from 'buffer'
 
 export default function InfoCard(props) {
   const info = props.info;
   // info = {name, position, facebook_id, email_id, image, phone_number}
-
+  console.log(info);
   return (
     <div className="probootstrap-teacher text-center probootstrap-animate fadeInUp probootstrap-animated">
       <figure className="media">
-        <img src={info.image} alt="" className="img-responsive" />
+        <img
+          src={`data:${info.image.contentType};base64,${Buffer.from(
+            info.image.data ? info.image.data : ""
+          ).toString("base64")}`}
+          alt=""
+          className="img-responsive"
+        />
       </figure>
       <div className="text">
         <h3>{info.name}</h3>

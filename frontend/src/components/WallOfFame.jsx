@@ -24,9 +24,9 @@ export default function WallOfFame() {
           .reverse()
           .map((key, index) => {
             return (
-              <div key={key}>
+              <React.Fragment key={key}>
                 <button
-                  className={`accordion ${index === 0 && "active"} above-part`}
+                  className={`accordion ${index === 0 && "active"} ${index === 0 && "above-part"}`}
                   onClick={accordionClick}
                 >
                   {`Academic Year ${key}-${(Number(key) % 2000) + 1}`}
@@ -67,7 +67,7 @@ export default function WallOfFame() {
                     </div>
                   </section>
                 </div>
-              </div>
+              </React.Fragment>
             );
           });
         setSecretariesRender(render);
