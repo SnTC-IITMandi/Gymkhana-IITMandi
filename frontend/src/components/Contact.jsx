@@ -56,7 +56,7 @@ function Society({ society }) {
       <section id="content">
         <br />
         <div align="center">
-          <p>{`${society.council_name} : ${society.advisor_name} (Advisor)`}</p>
+          <p>{`${society.council_name} : ${society.advisor_name} (Advisor) | ${society.advisor_email} `}</p>
         </div>
         <div style={{ overflowX: "scroll" }}>
           <table className="table">
@@ -75,6 +75,8 @@ function Society({ society }) {
                 <th className="tg-03to">Contact No.</th>
 
                 <th className="tg-kr4b">Faculty Advisors</th>
+                <th className="tg-kr4b">Faculty Email</th>
+                
               </tr>
               {/* clubs */}
               {society.clubs.map((club, clubIndex) => {
@@ -99,6 +101,9 @@ function Society({ society }) {
 
                           <td class="tg-kr4b">
                             {index === 0 && club.faculty_advisor}
+                          </td>
+                          <td class="tg-kr4b">
+                            {index === 0 && club.faculty_email}
                           </td>
                         </tr>
                       );
