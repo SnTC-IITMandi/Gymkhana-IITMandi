@@ -46,7 +46,7 @@ export default function Sports() {
                           <InfoCard
                             info={{
                               name: `${sec.name}`,
-                              image: `${sec.img}`,
+                              image: sec.img,
                               position: `${sec.post}`,
                               facebook_id: `${sec.facebook}`,
                               email_id: `${sec.email}`,

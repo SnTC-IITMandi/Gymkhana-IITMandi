@@ -4,7 +4,7 @@ import {Buffer} from 'buffer'
 export default function InfoCard(props) {
   const info = props.info;
   // info = {name, position, facebook_id, email_id, image, phone_number}
-  console.log(info);
+  
   return (
     <div className="probootstrap-teacher text-center probootstrap-animate fadeInUp probootstrap-animated">
       <figure className="media">

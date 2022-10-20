@@ -23,17 +23,20 @@ export default function WallOfFame() {
           .sort()
           .reverse()
           .map((key, index) => {
+            if (index === 0) return <React.Fragment key={index}></React.Fragment>;
             return (
               <React.Fragment key={key}>
                 <button
-                  className={`accordion ${index === 0 && "active"} ${index === 0 && "above-part"}`}
+                  className={`accordion ${index === 1 && "active"} ${
+                    index === 1 && "above-part"
+                  }`}
                   onClick={accordionClick}
                 >
                   {`Academic Year ${key}-${(Number(key) % 2000) + 1}`}
                 </button>
                 <div
                   className="panel"
-                  style={{ display: index === 0 ? "block" : "none" }}
+                  style={{ display: index === 1 ? "block" : "none" }}
                 >
                   <section
                     className="probootstrap-section secretaries"

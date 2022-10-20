@@ -39,7 +39,7 @@ export default function Contributors() {
     const fun = async () => {
       try {
         const response = await fetch(
-          "https://api.github.com/repos/KamandPrompt/Gymkhana-IITMandi/contributors"
+          "https://api.github.com/repos/SnTC-IITMandi/Gymkhana-IITMandi/contributors"
         );
         const data = await response.json();
         setContributors(data);
