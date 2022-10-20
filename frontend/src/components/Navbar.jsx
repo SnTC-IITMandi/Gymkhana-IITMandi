@@ -67,11 +67,11 @@ export default function Navbar(props) {
               <Link>More</Link>
               <div className="dropdown-content">
                 <Link to="/wall_of_fame" id="color">Wall of Fame</Link>
-                ---
+                {/* --- */}
                 <Link to="/contributors" id="color">Contributors</Link>
-                ---
+                {/* --- */}
                 <Link to="/contacts" id="color">Contacts</Link>
-                ---
+                {/* --- */}
                 <Link to="/news" id="color">News</Link>
               </div>
             </li>
