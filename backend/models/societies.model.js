@@ -14,8 +14,7 @@ const societySchema = new Schema({
       email: { type:String },
       coordinators: [{
         name: { type: String, required: true },
-        email: { type: String, required: true },
-        contact: { type: String, required: true },
+        email: { type: String, required: true }
       }],
       faculty_advisor:{ type:String },
       faculty_email: { type: String },
