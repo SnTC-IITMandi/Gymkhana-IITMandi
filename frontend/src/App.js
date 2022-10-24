@@ -14,6 +14,11 @@ import WallOfFame from "./components/WallOfFame.jsx";
 import Contributors from "./components/Contributors.jsx";
 import News from "./components/News";
 import Error from "./components/Error404"
+import ContactStyling from "./components/Styling/ContactStyling"
+import NewsStyling from "./components/Styling/NewsStyling"
+import ErrorStyling from "./components/Styling/ErrorStyling"
+import WallOfFameJS from "./components/JS/WallOfFameJS.jsx";
+
 function App() {
   return (
     <div className="probootstrap-page-wrapper">
@@ -27,11 +32,11 @@ function App() {
           <Route path="/literary" element={<><Literary /><Footer/></>} />
           <Route path="/cultural" element={<><Cultural /><Footer/></>} />
           <Route path="/sports" element={<><Sports /><Footer/></>} />
-          <Route path="/contacts" element={<><Contact /><Footer/></>} />
-          <Route path="/wall_of_fame" element={<><WallOfFame /><Footer/></>} />
+          <Route path="/contacts" element={<><ContactStyling /><Contact /><Footer/></>} />
+          <Route path="/wall_of_fame" element={<><WallOfFame /><Footer/><WallOfFameJS /></>} />
           <Route path="/contributors" element={<><Contributors /><Footer/></>} />
-          <Route path="/news" element={<><News /><Footer/></>} />
-          <Route path="*" element={<Error/>}/>
+          <Route path="/news" element={<><NewsStyling /><News /><Footer/></>} />
+          <Route path="*" element={<><ErrorStyling /><Error/></>}/>
         </Routes>
       </Router>
     </div>
