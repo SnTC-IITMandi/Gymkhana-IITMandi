@@ -5,7 +5,7 @@
 }
 
 #error {
-    background-color: #D4D9ED;
+    background-color: white;
     height: 100vh;
 }
 
@@ -22,13 +22,14 @@
     height: 300px;
     top: 40%;
     margin-top: -150px;
+    margin-left: 100px;
 }
 
 .cont_error>h1 {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 150px;
-    color: #fff;
+    color: grey;
     position: relative;
     left: -100%;
     transition: all 0.5s;
@@ -55,8 +56,8 @@
     height: 120%;
     top: 25px;
     right: -340px;
-    background-color: #8A65DF;
-    box-shadow: 0px 0px 60px 20px rgba(137, 100, 222, 0.5);
+    background-color: #6a41ed;
+    box-shadow: 0px 0px 60px 20px rgba(71, 54, 220, 0.5);
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
 }
@@ -67,8 +68,8 @@
     height: 300px;
     right: -10%;
     bottom: -301px;
-    background-color: #8B65E4;
-    box-shadow: 0px 0px 60px 10px rgba(131, 95, 214, 0.5), 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    background-color: #4b1fdc;
+    box-shadow: 0px 0px 60px 10px rgba(65, 76, 203, 0.5), 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
     z-index: 5;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
