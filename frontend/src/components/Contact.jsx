@@ -56,7 +56,7 @@ function Society({ society }) {
       <section id="content">
         <br />
         <div align="center">
-          <p>{`${society.council_name} : ${society.advisor_name} (Advisor) | ${society.advisor_email} `}</p>
+          <p>{`${society.council_name} : ${society.advisor_name} (Advisor) | ${society.advisor_email} | ${society.coadvisor_name}`}</p>
         </div>
         <div style={{ overflowX: "scroll" }}>
           <table className="table">
@@ -72,7 +72,6 @@ function Society({ society }) {
                   <br />
                 </th>
                 <th className="tg-03to">E-mail Id</th>
-                <th className="tg-03to">Contact No.</th>
 
                 <th className="tg-kr4b">Faculty Advisors</th>
                 <th className="tg-kr4b">Faculty Email</th>
@@ -97,7 +96,6 @@ function Society({ society }) {
                             <br />
                           </td>
                           <td className="tg-03to">{coordinator.email}</td>
-                          <td className="tg-03to">{coordinator.contact}</td>
 
                           <td class="tg-kr4b">
                             {index === 0 && club.faculty_advisor}

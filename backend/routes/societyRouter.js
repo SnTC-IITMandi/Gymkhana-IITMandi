@@ -6,7 +6,7 @@ const hostelTable = require("../models/hostel.model");
 router.route("/technical").get(async (req, res) => {
   try {
     const society = await societyTable.findOne({
-      society_name:"Technical"
+      society_name:"Technical Society"
     });
     const context = {
       status: "success",
@@ -37,7 +37,7 @@ router.route("/research").get(async (req, res) => {
 router.route("/cultural").get(async (req, res) => {
   try {
     const society = await societyTable.findOne({
-      society_name: "Cultural",
+      society_name: "Cultural Society",
       
     });
     const context = {
