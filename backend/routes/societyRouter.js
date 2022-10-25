@@ -21,7 +21,7 @@ router.route("/technical").get(async (req, res) => {
 router.route("/research").get(async (req, res) => {
   try {
     const society = await societyTable.findOne({
-      society_name: "Research",
+      society_name: "Research Society",
       
     });
     const context = {
@@ -69,7 +69,7 @@ router.route("/sports").get(async (req, res) => {
 router.route("/literary").get(async (req, res) => {
   try {
     const society = await societyTable.findOne({
-      society_name: "Literary",
+      society_name: "Literary Society",
       
     });
     const context = {
