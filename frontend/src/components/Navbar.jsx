@@ -61,7 +61,7 @@ export default function Navbar(props) {
               <Link to="/hostel">Hostel</Link>
             </li>
             <li className={isActive.senate}>
-              <Link to="/senate">Senate</Link>
+              <Link to="/senate">Academic Council</Link>
             </li>
             <li className={`dropdown2 ${isActive.more}`} id="sidelist">
               <Link>More</Link>

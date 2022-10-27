@@ -44,7 +44,7 @@ export default function Senate() {
         <div className="container">
           <div className="row">
             <div className="col-md-12 text-left section-heading probootstrap-animate fadeInUp probootstrap-animated">
-              <h2>Senate</h2>
+              <h2>Academic Council</h2>
             </div>
           </div>
         </div>
@@ -91,16 +91,16 @@ export default function Senate() {
                   className="col-md-7 col-md-push-1  probootstrap-animate fadeInUp probootstrap-animated"
                   id="probootstrap-content"
                 >
-                  <h2>Senate</h2>
+                  <h2>Academic Council</h2>
                   <p>
                     {/* <!-- Add senate info here --> */}
-                    The Senate is the topmost decision making body of the
+                    The Academic Council is the topmost decision making body of the
                     institute, having student representatives as a few of its
                     members. All the important decisions concerning the
                     institute matters are implemented only after the approval of
-                    the Senate. The Director of the institute acts as the
-                    ex-officio Chairman of the Senate. The student members in
-                    the Senate are the Academic Affairs Secretary, the General
+                    the Academic Council. The Director of the institute acts as the
+                    ex-officio Chairman of the Academic Council. The student members in
+                    the Academic Council are the Academic Affairs Secretary, the General
                     Secretary and the Research Secretary.
                   </p>
                   <p>
