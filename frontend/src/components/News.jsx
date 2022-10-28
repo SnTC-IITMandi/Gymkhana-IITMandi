@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
+import { Pagination } from "@mui/material";
 
 export default function News() {
+  const elementsPerPage = 3;
   const [news, setNews] = useState([]);
+  const [page, setPage] = useState(1);
+  const [totalPage, setTotalPages] = useState(1);
 
   useEffect(() => {
     const fun = async () => {
@@ -11,11 +15,12 @@ export default function News() {
           `${process.env.REACT_APP_BACKENDURL}/news`
         );
         const data = await response.json();
+
         setNews(data.data);
+        setTotalPages(1 + parseInt(data.data.length / elementsPerPage));
       } catch (err) {
         console.log(err);
       }
-
     };
     fun();
   }, []);
@@ -39,18 +44,40 @@ export default function News() {
               <div className="probootstrap-flex-block">
                 <div className="probootstrap-text probootstrap-animate fadeInUp probootstrap-animated">
                   <div className="newsitem">
-                    {news.map((element)=>{
-                      return<div id="news-display" key={element._id}>
-                      <h3>
-                        {element.title } | <span>{new Date(element.date).toLocaleDateString()}</span>
-                      </h3>
-                      <p dangerouslySetInnerHTML={{__html:element.description}}>
-                      </p>
-                      <br />
-                      <br />
-                    </div>
-
-                    })}
+                    {news
+                      .slice(
+                        elementsPerPage * (page - 1),
+                        elementsPerPage * page
+                      )
+                      .map((element) => {
+                        return (
+                          <div id="news-display" key={element._id}>
+                            <h3>
+                              {element.title} |{" "}
+                              <span>
+                                {new Date(element.date).toLocaleDateString()}
+                              </span>
+                            </h3>
+                            <p
+                              dangerouslySetInnerHTML={{
+                                __html: element.description,
+                              }}
+                            ></p>
+                            <br />
+                            <br />
+                          </div>
+                        );
+                      })}
+                  </div>
+                  <br />
+                  <div>
+                    <Pagination
+                      style={{ display: "flex", justifyContent: "center" }}
+                      count={totalPage}
+                      color="secondary"
+                      variant="outlined"
+                      onChange={(e, value) => setPage(value)}
+                    />
                   </div>
                 </div>
               </div>
