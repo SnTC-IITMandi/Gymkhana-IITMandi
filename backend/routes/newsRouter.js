@@ -5,7 +5,7 @@ const news = require("../models/news.model");
 
 router.route("/").get(async(req,res)=>{
     try {
-        const newsList=await news.find()
+        const newsList=await news.find().sort({date:1})
         const context={
           status:'success',
           data:newsList,
