@@ -38,8 +38,8 @@ function Hostel({ hostels }){
 								<td className='tg-03to'>{secretary.post} Secretary</td>
 								<td className='tg-03to'>{secretary.email}</td>
 								<td className='tg-03to'></td>
-								<td className='tg-kr4b'>{index===0 && hostel.warden}</td>
-								<td className='tg-03to'>{index===0 && hostel.warden_email}</td>
+								<td className='tg-kr4b'>{index===0 && hostel.warden.name}</td>
+								<td className='tg-03to'>{index===0 && hostel.warden.email}</td>
 							</tr>
 
               })}
@@ -240,11 +240,11 @@ export default function Contact() {
         </label>
         
         {/* change data dynamically */}
-        
         {(activeElement === "technical" && !!society) && <Society society={society} />}
         {(activeElement === "research"  && !!society) && <Society society={society} />}
         {(activeElement === "cultural"  && !!society) && <Society society={society} />}
         {(activeElement === "literary"  && !!society) && <Society society={society} />}
+        {(activeElement === "sports"  && !!society) && <Society society={society} />}
         {(activeElement === "hostel"  && !!society) && <Hostel hostels={society} />}
         
         
