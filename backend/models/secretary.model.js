@@ -7,7 +7,7 @@ const secSchema = new Schema({
   post: { type: String, required: true },
   facebook: { type: String, required: false },
   email: { type: String, required: true },
-  img: { data: Buffer, contentType: String},
+  img: { type: String},
   year: { type: Number, required: true },
 });
 
