@@ -9,9 +9,7 @@ export default function InfoCard(props) {
     <div className="probootstrap-teacher text-center probootstrap-animate fadeInUp probootstrap-animated">
       <figure className="media">
         <img
-          src={`data:${info.image.contentType};base64,${Buffer.from(
-            info.image.data ? info.image.data : ""
-          ).toString("base64")}`}
+          src={info.image}
           alt=""
           className="img-responsive"
         />
