@@ -16,7 +16,7 @@ export default function InfoCard(props) {
       </figure>
       <div className="text">
         <h3>{info.name}</h3>
-        <p>{`${info.position} Secretary`}</p>
+        <p>{`${info.position}`}</p>
         <ul className="probootstrap-footer-social">
           {info.facebook_id !== "" && (
             <li className="facebook">
