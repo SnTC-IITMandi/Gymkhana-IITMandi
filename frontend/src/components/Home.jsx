@@ -10,7 +10,9 @@ export default function Home() {
       try {
         const response = await fetch(`${process.env.REACT_APP_BACKENDURL}/`);
         const data = await response.json();
-        const currSec = data.data.filter((sec) => sec.year === 2022);
+        const allPres = data.data.filter((sec) => sec.year === 2022).filter((sec) => sec.post !== "President, Student Gymkhana");
+        const mainPres = data.data.filter((sec) => sec.year === 2022).filter((sec) => sec.post === "President, Student Gymkhana");
+        const currSec = mainPres.concat(allPres);
         setSecretaries(currSec);
       } catch (err) {
         console.log(err);
@@ -61,7 +63,7 @@ export default function Home() {
         <div className="container">
           <div className="row">
             <div className="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate  fadeInUp probootstrap-animated">
-              <h2>Meet Our Secretaries</h2>
+              <h2>Meet Our Presidents</h2>
             </div>
           </div>
 

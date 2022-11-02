@@ -17,7 +17,7 @@ router.route("/").get(async (req, res) => {
 router.route("/technical").get(async (req, res) => {
   try {
     const secretary = await secretariesTable.findOne({
-      post: "President, (SNTC) Technical Affairs",
+      post: "President, Technical Affairs",
       year: 2022,
     });
     const context = {
