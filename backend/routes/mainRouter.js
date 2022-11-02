@@ -17,7 +17,7 @@ router.route("/").get(async (req, res) => {
 router.route("/technical").get(async (req, res) => {
   try {
     const secretary = await secretariesTable.findOne({
-      post: "Technical",
+      post: "President, (SNTC) Technical Affairs",
       year: 2022,
     });
     const context = {
@@ -33,7 +33,7 @@ router.route("/technical").get(async (req, res) => {
 router.route("/research").get(async (req, res) => {
   try {
     const secretary = await secretariesTable.findOne({
-      post: "Research",
+      post: "President, Research Affairs",
       year: 2022,
     });
     const context = {
@@ -49,7 +49,7 @@ router.route("/research").get(async (req, res) => {
 router.route("/cultural").get(async (req, res) => {
   try {
     const secretary = await secretariesTable.findOne({
-      post: "Cultural",
+      post: "President, Cultural Affairs",
       year: 2022,
     });
     const context = {
@@ -65,7 +65,7 @@ router.route("/cultural").get(async (req, res) => {
 router.route("/sports").get(async (req, res) => {
   try {
     const secretary = await secretariesTable.findOne({
-      post: "Sports",
+      post: "President, Sports Affairs",
       year: 2022,
     });
     const context = {
@@ -81,7 +81,7 @@ router.route("/sports").get(async (req, res) => {
 router.route("/literary").get(async (req, res) => {
   try {
     const secretary = await secretariesTable.findOne({
-      post: "Literary",
+      post: "President, Literary Affairs",
       year: 2022,
     });
     const context = {
@@ -97,7 +97,7 @@ router.route("/literary").get(async (req, res) => {
 router.route("/hostel").get(async (req, res) => {
   try {
     const secretary = await secretariesTable.findOne({
-      post: "Hostel",
+      post: "President, Hostel Affairs",
       year: 2022,
     });
     const context = {
@@ -113,7 +113,7 @@ router.route("/hostel").get(async (req, res) => {
 router.route("/senate").get(async (req, res) => {
   try {
     const secretary = await secretariesTable.findOne({
-      post: "Academic",
+      post: "President, Academic Affairs",
       year: 2022,
     });
     const context = {
