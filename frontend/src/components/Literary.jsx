@@ -39,7 +39,7 @@ export default function Literary() {
               <div className="row probootstrap-gutter0">
                 <div className="col-md-4" id="probootstrap-sidebar">
                   <div className="probootstrap-sidebar-inner probootstrap-overlap probootstrap-animate fadeInUp probootstrap-animated">
-                    <h3>Literary Secretary</h3>
+                    <h3>Literary Affairs</h3>
                     <ul className="probootstrap-side-menu">
                       <li>
                         {sec && (

@@ -1,5 +1,4 @@
 import React from 'react'
-import {Buffer} from 'buffer'
 
 export default function InfoCard(props) {
   const info = props.info;

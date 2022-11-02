@@ -57,7 +57,7 @@ export default function Senate() {
               <div className="row probootstrap-gutter0">
                 <div className="col-md-4" id="probootstrap-sidebar">
                   <div className="probootstrap-sidebar-inner probootstrap-overlap probootstrap-animate fadeInUp probootstrap-animated">
-                    <h3>Academic Secretary</h3>
+                    <h3>Academic Affairs</h3>
                     <ul className="probootstrap-side-menu">
                       <li>
 

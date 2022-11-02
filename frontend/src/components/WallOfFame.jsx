@@ -58,7 +58,7 @@ export default function WallOfFame() {
                                 info={{
                                   name: sec.name,
                                   image: sec.img,
-                                  position: sec.post,
+                                  position: ((sec.year < 2022) ? sec.post + ' Secretary': sec.post),
                                   facebook_id: sec.facebook,
                                   email_id: sec.email,
                                 }}

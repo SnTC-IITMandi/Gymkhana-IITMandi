@@ -39,7 +39,7 @@ export default function Sports() {
               <div className="row probootstrap-gutter0">
                 <div className="col-md-4" id="probootstrap-sidebar">
                   <div className="probootstrap-sidebar-inner probootstrap-overlap probootstrap-animate fadeInUp probootstrap-animated fadeInUp probootstrap-animate fadeInUp probootstrap-animatedd fadeInUp probootstrap-animate fadeInUp probootstrap-animated fadeInUp probootstrap-animate fadeInUp probootstrap-animateddd">
-                    <h3>Sport Secretary</h3>
+                    <h3>Sport Affairs</h3>
                     <ul className="probootstrap-side-menu">
                       <li>
                         {sec && (
