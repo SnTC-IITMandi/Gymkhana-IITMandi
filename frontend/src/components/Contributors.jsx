@@ -37,14 +37,21 @@ export default function Contributors() {
 
   useEffect(() => {
     const fun = async () => {
+      let data1 = [];
+      let data2 = [];
       try {
-        const response = await fetch(
+        const response1 = await fetch(
           "https://api.github.com/repos/SnTC-IITMandi/Gymkhana-IITMandi/contributors"
         );
-        const data = await response.json();
-        setContributors(data);
+        data1 = await response1.json();
+        const response2 = await fetch(
+          "https://api.github.com/repos/KamandPrompt/Gymkhana-IITMandi/contributors"
+        );
+        data2 = await response2.json();
       } catch (err) {
         console.log(err);
+      } finally {
+        setContributors([...data1, ...data2]);
       }
     };
     fun();

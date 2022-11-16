@@ -14,7 +14,6 @@ export default function Technical() {
         );
         const data = await response.json();
         setsec(data.data);
-        console.log(data.data);
       } catch (err) {
         console.log(err);
       }

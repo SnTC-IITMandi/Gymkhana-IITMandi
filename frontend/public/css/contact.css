@@ -83,10 +83,6 @@ body {
 
 
 @media screen and (max-width: 650px) {
-    .contactgym label {
-        font-size: 0;
-    }
-
     .contactgym label:before {
         margin: 0;
         font-size: 18px;
