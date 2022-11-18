@@ -16,10 +16,19 @@ router.route("/").get(async (req, res) => {
 
 router.route("/technical").get(async (req, res) => {
   try {
-    const secretary = await secretariesTable.findOne({
+    let secretary = await secretariesTable.find({
       post: "President, Technical Affairs",
-      year: 2022,
     });
+    secretary = secretary.reduce(
+      function (prev, current) {
+        if (+current.year > +prev.year) {
+          return current;
+        } else {
+          return prev;
+        }
+      },
+      { year: 0 }
+    );
     const context = {
       status: "success",
       data: secretary,
@@ -32,10 +41,19 @@ router.route("/technical").get(async (req, res) => {
 
 router.route("/research").get(async (req, res) => {
   try {
-    const secretary = await secretariesTable.findOne({
+    let secretary = await secretariesTable.find({
       post: "President, Research Affairs",
-      year: 2022,
     });
+    secretary = secretary.reduce(
+      function (prev, current) {
+        if (+current.year > +prev.year) {
+          return current;
+        } else {
+          return prev;
+        }
+      },
+      { year: 0 }
+    );
     const context = {
       status: "success",
       data: secretary,
@@ -48,10 +66,19 @@ router.route("/research").get(async (req, res) => {
 
 router.route("/cultural").get(async (req, res) => {
   try {
-    const secretary = await secretariesTable.findOne({
+    let secretary = await secretariesTable.find({
       post: "President, Cultural Affairs",
-      year: 2022,
     });
+    secretary = secretary.reduce(
+      function (prev, current) {
+        if (+current.year > +prev.year) {
+          return current;
+        } else {
+          return prev;
+        }
+      },
+      { year: 0 }
+    );
     const context = {
       status: "success",
       data: secretary,
@@ -64,10 +91,19 @@ router.route("/cultural").get(async (req, res) => {
 
 router.route("/sports").get(async (req, res) => {
   try {
-    const secretary = await secretariesTable.findOne({
+    let secretary = await secretariesTable.find({
       post: "President, Sports Affairs",
-      year: 2022,
     });
+    secretary = secretary.reduce(
+      function (prev, current) {
+        if (+current.year > +prev.year) {
+          return current;
+        } else {
+          return prev;
+        }
+      },
+      { year: 0 }
+    );
     const context = {
       status: "success",
       data: secretary,
@@ -80,10 +116,19 @@ router.route("/sports").get(async (req, res) => {
 
 router.route("/literary").get(async (req, res) => {
   try {
-    const secretary = await secretariesTable.findOne({
+    let secretary = await secretariesTable.find({
       post: "President, Literary Affairs",
-      year: 2022,
     });
+    secretary = secretary.reduce(
+      function (prev, current) {
+        if (+current.year > +prev.year) {
+          return current;
+        } else {
+          return prev;
+        }
+      },
+      { year: 0 }
+    );
     const context = {
       status: "success",
       data: secretary,
@@ -96,10 +141,19 @@ router.route("/literary").get(async (req, res) => {
 
 router.route("/hostel").get(async (req, res) => {
   try {
-    const secretary = await secretariesTable.findOne({
+    let secretary = await secretariesTable.find({
       post: "President, Hostel Affairs",
-      year: 2022,
     });
+    secretary = secretary.reduce(
+      function (prev, current) {
+        if (+current.year > +prev.year) {
+          return current;
+        } else {
+          return prev;
+        }
+      },
+      { year: 0 }
+    );
     const context = {
       status: "success",
       data: secretary,
@@ -112,10 +166,19 @@ router.route("/hostel").get(async (req, res) => {
 
 router.route("/senate").get(async (req, res) => {
   try {
-    const secretary = await secretariesTable.findOne({
+    let secretary = await secretariesTable.find({
       post: "President, Academic Affairs",
-      year: 2022,
     });
+    secretary = secretary.reduce(
+      function (prev, current) {
+        if (+current.year > +prev.year) {
+          return current;
+        } else {
+          return prev;
+        }
+      },
+      { year: 0 }
+    );
     const context = {
       status: "success",
       data: secretary,

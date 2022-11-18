@@ -10,8 +10,18 @@ export default function Home() {
       try {
         const response = await fetch(`${process.env.REACT_APP_BACKENDURL}/`);
         const data = await response.json();
-        const allPres = data.data.filter((sec) => sec.year === 2022).filter((sec) => sec.post !== "President, Student Gymkhana");
-        const mainPres = data.data.filter((sec) => sec.year === 2022).filter((sec) => sec.post === "President, Student Gymkhana");
+        const latestYear = data.data.reduce(
+          function (prev, current) {
+            if (+current.year > +prev.year) {
+              return current;
+            } else {
+              return prev;
+            }
+          },
+          { year: 0 }
+        ).year;
+        const allPres = data.data.filter((sec) => sec.year === latestYear).filter((sec) => sec.post !== "President, Student Gymkhana");
+        const mainPres = data.data.filter((sec) => sec.year === latestYear).filter((sec) => sec.post === "President, Student Gymkhana");
         const currSec = mainPres.concat(allPres);
         setSecretaries(currSec);
       } catch (err) {
